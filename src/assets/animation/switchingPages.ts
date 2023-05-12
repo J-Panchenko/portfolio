@@ -1,4 +1,6 @@
-export const switchingPages = {
+import { Variants } from 'framer-motion';
+
+export const switchingPages: Variants = {
   hidden: {
     opacity: 0,
   },

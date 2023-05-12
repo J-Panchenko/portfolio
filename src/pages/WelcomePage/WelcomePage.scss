@@ -77,17 +77,14 @@
   }
 
   &__img {
-    height: auto;
     object-fit: cover;
 
     &--top {
-      width: 101%;
       margin: 0;
       margin-top: -18%;
     }
 
     &--bottom {
-      width: 315%;
       margin-left: -85%;
       margin-top: -79%;
     }

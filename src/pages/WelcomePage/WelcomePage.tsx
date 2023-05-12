@@ -1,11 +1,11 @@
 
 import { BgAuthor, CustomButton } from 'components';
+import { moveXAnimation, switchingPages } from 'assets/animation';
 import { FaArrowRight } from 'react-icons/fa';
 import { externalLinks } from 'data';
 import me from 'assets/images/welcomePage/me.jpg';
 import me1 from 'assets/images/welcomePage/me1.jpg';
 import { motion } from 'framer-motion';
-import { switchingPages } from 'assets/animation';
 import { useNavigate } from 'react-router-dom';
 import './WelcomePage.scss';
 
@@ -21,28 +21,53 @@ function WelcomePage() {
       exit="exit"
     >
       <ul className="welcome-page__photos">
-        <li className="welcome-page__photo welcome-page__photo--top">
+        <motion.li
+          className="welcome-page__photo welcome-page__photo--top"
+          variants={moveXAnimation}
+          animate="visible"
+          initial="hidden"
+          custom={-300}
+          transition={{ duration: 0.8 }}
+          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05, zIndex: 1 }}
+        >
           <img
             className="welcome-page__img welcome-page__img--top"
             src={me1}
             alt="Yuliia Panchenko"
+            loading="lazy"
+            height="auto"
+            width="101%"
           />
-        </li>
-        <li className="welcome-page__photo welcome-page__photo--bottom">
+        </motion.li>
+        <motion.li
+          className="welcome-page__photo welcome-page__photo--bottom"
+          variants={moveXAnimation}
+          animate="visible"
+          initial="hidden"
+          custom={-260}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
+        >
           <img
             className="welcome-page__img welcome-page__img--bottom"
             src={me}
             alt="Yuliia Panchenko"
+            loading="lazy"
+            height="auto"
+            width="315%"
           />
-        </li>
+        </motion.li>
       </ul>
       <div className="welcome-page__container">
         <motion.h1
           className="welcome-page__title"
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ x: 100, opacity: 0 }}
+          variants={moveXAnimation}
+          animate="visible"
+          initial="hidden"
+          custom={100}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           Hi, I&apos;m{' '}
           <span className="welcome-page__title--highlighted">
@@ -51,16 +76,24 @@ function WelcomePage() {
           a <span className="welcome-page__title--highlighted">Frontend Engineer,</span>
         </motion.h1>
         <motion.p
-          animate={{ x: 0, opacity: 1 }}
-          initial={{ x: 100, opacity: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
           className="welcome-page__subtitle"
+          variants={moveXAnimation}
+          animate="visible"
+          initial="hidden"
+          custom={100}
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           that loves to code and build products<br />
           with a delightful user experience.
         </motion.p>
-        <figure className="welcome-page__figure">
+        <motion.figure
+          className="welcome-page__figure"
+          variants={moveXAnimation}
+          animate="visible"
+          initial="hidden"
+          custom={100}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           <blockquote
             className="welcome-page__quote"
             cite={externalLinks.kentBeck}
@@ -73,7 +106,7 @@ function WelcomePage() {
           <figcaption className="welcome-page__quote-author">
             <cite>Kent Beck</cite>
           </figcaption>
-        </figure>
+        </motion.figure>
         <CustomButton
           type="button"
           text="Learn more"
