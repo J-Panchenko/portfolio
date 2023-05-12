@@ -1,0 +1,155 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.welcome-page {
+  @include flexRowWrap(0, center, space-between);
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include scroll;
+  background-image: -webkit-linear-gradient(-24deg, transparent 44.5%, $primary 44.5%);
+  position: relative;
+
+  .block1 {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 70%;
+    background-color: $block1;
+    bottom: 0;
+    left: 38%;
+    transform: matrix(1, 0, -0.445, 1, 0, 0);
+  }
+
+  .block2 {
+    position: absolute;
+    width: 80px;
+    height: 50%;
+    background-color: $block2;
+    bottom: 0;
+    left: 42%;
+    transform: matrix(1, 0, -0.445, 1, 0, 0);
+  }
+
+  .block3 {
+    position: absolute;
+    width: 80px;
+    height: 30%;
+    background-color: $block3;
+    bottom: 0;
+    left: 46%;
+    transform: matrix(1, 0, -0.445, 1, 0, 0);
+  }
+
+  .bg-author {
+    bottom: 0;
+    left: 0;
+  }
+
+  &__photos {
+    padding: 120px;
+    position: relative;
+    height: 100%;
+    width: 50%;
+  }
+
+  &__photo {
+    position: absolute;
+    overflow: hidden;
+    border: 5px solid $block3;
+    border-radius: 4px;
+
+    &--top {
+      width: 370px;
+      height: 360px;
+      left: 180px;
+      top: 80px;
+    }
+
+    &--bottom {
+      width: 240px;
+      height: 360px;
+      bottom: 80px;
+      left: 80px;
+      border-color: $primary;
+    }
+  }
+
+  &__img {
+    height: auto;
+    object-fit: cover;
+
+    &--top {
+      width: 101%;
+      margin: 0;
+      margin-top: -18%;
+    }
+
+    &--bottom {
+      width: 315%;
+      margin-left: -85%;
+      margin-top: -79%;
+    }
+  }
+
+  &__figure {
+    margin-bottom: auto;
+    margin-top: auto;
+    padding: 0 24px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 104px;
+      height: 68px;
+      background-color: $secondary;
+      z-index: 1;
+      top: 50%;
+      right: -104px;
+      transform: translateY(-50%) matrix(1, 0, -0.445, 1, 0, 0);
+    }
+  }
+
+  &__quote {
+    &-text {
+      @include fontMedium(14px, 20px);
+      font-style: italic;
+      color: $white;
+      text-align: right;
+    }
+
+    &-author {
+      @include fontMedium(14px, 20px);
+      color: $white;
+      text-align: right;
+      margin-top: 8px;
+      margin-right: 16px;
+    }
+  }
+
+  &__container {
+    width: 50%;
+    height: 100%;
+    @include flexColumnNoWrap(16px, flex-end, flex-start);
+    padding: 80px;
+    gap: 16px;
+  }
+
+  &__title {
+    @include fontSemibold(36px, 48px);
+    text-align: right;
+    color: $secondary;
+
+    &--highlighted {
+      color: $white;
+    }
+  }
+
+  &__subtitle {
+    @include fontMedium(20px, 28px);
+    text-align: right;
+    color: $secondary;
+  }
+}

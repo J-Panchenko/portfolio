@@ -1,0 +1,21 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.bg-author {
+  @include flexRowWrap(0, center, space-around);
+  padding: 8px 16px;
+  position: absolute;
+
+  &__bg {
+
+    &-text {
+      @include fontRegular(12px, 21px);
+      color: $middle-grey;
+    }
+
+    &-link {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
