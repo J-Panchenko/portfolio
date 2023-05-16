@@ -1,14 +1,15 @@
+import { contacts, menuList } from './initialData';
 import { error, success } from './userMessage';
 import { externalLinks } from './externalLinks';
 import { regex } from './regex';
-import { schemaUserForm } from './schemaForm';
-import { tabList } from './initialData';
+import { schemaForm } from './schemaForm';
 
 export {
   regex,
   error,
   success,
-  tabList,
-  schemaUserForm,
+  menuList,
+  schemaForm,
   externalLinks,
+  contacts,
 };

@@ -1,0 +1,9 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.resume {
+  &__title {
+    @include fontSemibold(36px, 48px);
+    color: $secondary;
+  }
+}

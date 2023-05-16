@@ -1,3 +1,4 @@
-import InputSample from './InputSample/InputSample';
+import FormInput from './FormInput/FormInput';
+import FormTextarea from './FormTextarea/FormTextarea';
 
-export { InputSample };
+export { FormInput, FormTextarea };

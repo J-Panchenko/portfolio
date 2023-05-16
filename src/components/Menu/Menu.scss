@@ -1,0 +1,94 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.menu {
+  width: 100%;
+
+  &__list {
+    @include flexRowNoWrap(16px);
+    position: relative;
+    padding: 8px;
+    background-color: $secondary;
+    border-radius: 4px;
+  }
+
+  &__item {
+    all: unset;
+    flex-grow: 1;
+    z-index: 100;
+    display: flex;
+    cursor: pointer;
+    position: relative;
+    border-radius: 50%;
+    align-items: center;
+    will-change: transform;
+    justify-content: center;
+    padding: 0.55em 0 0.85em;
+    transition: transform var(--timeOut, 0.7s);
+
+    &::before {
+      content: '';
+      z-index: -1;
+      width: 4.2em;
+      height: 4.2em;
+      border-radius: 50%;
+      position: absolute;
+      transform: scale(0);
+      transition: background-color $duration, transform $duration;
+    }
+
+    &.active {
+      transform: translate3d(0, -.8em, 0);
+
+      &::before {
+        transform: scale(1);
+        background-color: $primary-hover;
+      }
+
+      .menu__icon {
+        animation: strok .9s reverse;
+      }
+    }
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    stroke: $white-light;
+    fill: $white-light;
+    stroke-width: 3px;
+    stroke-miterlimit: 10;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1400;
+  }
+
+  &__button {
+    @include flexRowNoWrap;
+    width: 100%;
+  }
+}
+
+@keyframes strok {
+  100% {
+    stroke-dashoffset: 1400;
+  }
+}
+
+.menu__border {
+  left: 0;
+  bottom: 99%;
+  width: 10.9em;
+  height: 2.4em;
+  position: absolute;
+  clip-path: url(#menu);
+  will-change: transform;
+  background-color: $secondary;
+  transition: transform var(--timeOut, $duration);
+
+}
+
+.svg-container {
+  width: 0;
+  height: 0;
+}

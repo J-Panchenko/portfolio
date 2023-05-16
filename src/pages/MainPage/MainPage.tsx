@@ -1,30 +1,27 @@
-import * as z from 'zod';
-import { CustomButton, Footer, InputSample } from 'components';
-import { motion } from 'framer-motion';
-import { schemaUserForm } from 'data';
+import { AboutMe, BgAuthor, GetInTouch, Menu, MySkills, RecentWorkList, Resume } from 'components';
+import { AnimatePresence, motion } from 'framer-motion';
 import { switchingPages } from 'assets/animation';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
 import './MainPage.scss';
 
-type UserForm = z.infer<typeof schemaUserForm>;
-
 function MainPage() {
+  const [activeTab, setActiveTab] = useState<MenuId>('about');
 
-  const {
-    reset,
-    register,
-    handleSubmit,
-    formState: { errors, isValid },
-  } = useForm<UserForm>({
-    resolver: zodResolver(schemaUserForm),
-    mode: 'onChange',
-    delayError: 500,
-  });
-
-  const onSubmit = (data: UserForm) => {
-    alert(`Your data is valid: ${JSON.stringify(data, null, 2)}`);
-    reset();
+  const getContent = (id: MenuId) => {
+    switch (id) {
+    case 'about':
+      return <AboutMe />;
+    case 'skills':
+      return <MySkills />;
+    case 'projects':
+      return <RecentWorkList />;
+    case 'contact':
+      return <GetInTouch />;
+    case 'resume':
+      return <Resume />;
+    default:
+      return <AboutMe />;
+    }
   };
 
   return (
@@ -37,27 +34,21 @@ function MainPage() {
       style={{ overflow: 'hidden' }}
     >
       <div className="main-page__container">
-        <h1 className="main-page__title">This is the main page of the app</h1>
-        <form
-          className="main-page__form"
-          onSubmit={handleSubmit(onSubmit)}
-        >
-          <InputSample
-            register={register}
-            label="Name"
-            registerName="name"
-            errorMessage={errors.name?.message}
-          />
-          <InputSample
-            register={register}
-            label="Email"
-            registerName="email"
-            errorMessage={errors.email?.message}
-          />
-          <CustomButton type="submit" text="Submit" disabled={!isValid} />
-        </form>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            className="main-page__content"
+            variants={switchingPages}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+          >
+            {getContent(activeTab)}
+          </motion.div>
+        </AnimatePresence>
+        <Menu activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
-      <Footer />
+      <BgAuthor />
     </motion.section>
   );
 }

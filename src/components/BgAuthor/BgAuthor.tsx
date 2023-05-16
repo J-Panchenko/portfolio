@@ -7,9 +7,23 @@ function BgAuthor() {
     <div className="bg-author">
       <p className="bg-author__bg-text">
         <span>Background photo by </span>
-        <a className="bg-author__bg-link" href={externalLinks.bgCreator}>Annie Spratt</a>
+        <a
+          className="bg-author__bg-link"
+          href={externalLinks.bgCreator}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Annie Spratt
+        </a>
         <span> on </span>
-        <a className="bg-author__bg-link" href={externalLinks.bgSite}>Unsplash</a>
+        <a
+          className="bg-author__bg-link"
+          href={externalLinks.bgSite}
+          target="_blank"
+          rel="noreferrer"
+        >
+          Unsplash
+        </a>
       </p>
     </div>
   );

@@ -1,14 +1,14 @@
 @import 'assets/styles/variables';
 @import 'assets/styles/mixin';
 
-.input-sample {
+.form-textarea {
   @include flexColumnNoWrap(6px, flex-start, flex-start);
   position: relative;
   width: 100%;
 
   &__label {
     @include fontRegular(14px, 21px);
-    color: $grey;
+    color: $secondary;
     width: 100%;
 
     &.label-error {
@@ -18,14 +18,13 @@
 
   &__input {
     @include fontRegular(16px, 24px);
-    color: $grey;
+    color: $dark-grey;
     text-overflow: ellipsis;
     width: 100%;
-    height: 50px;
     padding: 12px 24px;
     border-radius: 4px;
     border: 1px solid $primary;
-    background-color: $white;
+    background-color: transparent;
     outline: none;
 
     &-wrapper {
@@ -41,14 +40,14 @@
     &:-webkit-autofill:hover,
     &:-webkit-autofill:focus,
     &:-webkit-autofill:active {
-      -webkit-box-shadow: 0 0 0 30px $white inset !important;
+      -webkit-box-shadow: 0 0 0 30px transparent inset !important;
       transition: background-color 5000s ease-in-out 0s;
-      color: $grey !important;
+      color: $dark-grey !important;
     }
 
     &::placeholder {
       @include fontRegular(16px, 24px);
-      color: $grey;
+      color: $light-grey;
     }
 
     &:hover {
@@ -58,8 +57,8 @@
 
     &:focus,
     &:active {
-      color: $grey;
-      background-color: $white;
+      color: $dark-grey;
+      background-color: transparent;
       border-color: $primary-hover;
     }
 
@@ -68,19 +67,19 @@
       padding: 12px 24px;
       color: $warning;
       border-color: $warning;
-      background-color: $white;
+      background-color: transparent;
 
       &:hover {
         color: $warning;
         border-color: $warning;
-        background-color: $white;
+        background-color: transparent;
       }
 
       &:focus,
       &:active {
-        color: $grey;
+        color: $dark-grey;
         border-color: $warning;
-        background-color: $white;
+        background-color: transparent;
       }
     }
   }

@@ -1,14 +1,15 @@
 import {
   CSSProperties,
   DetailedHTMLProps,
-  InputHTMLAttributes,
+  TextareaHTMLAttributes,
 } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
-import { ErrorMessage } from 'components';
+import { Textarea, TextareaProps } from '@chakra-ui/react';
+import ErrorMessage from 'components/ErrorMessage';
 import { motion } from 'framer-motion';
-import './InputSample.scss';
+import './FormTextarea.scss';
 
-type InputSampleProps<T extends FieldValues> = {
+type FormTextareaProps<T extends FieldValues> = {
   register: UseFormRegister<T>;
   registerName: keyof T;
   label?: string;
@@ -17,9 +18,10 @@ type InputSampleProps<T extends FieldValues> = {
   labelClasses?: string;
   inputClasses?: string;
   wrapperClasses?: string;
-} & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+} & TextareaProps
+  & DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 
-function InputSample<T extends FieldValues = FieldValues>(props: InputSampleProps<T>) {
+function FormTextarea<T extends FieldValues = FieldValues>(props: FormTextareaProps<T>) {
   const {
     register,
     registerName,
@@ -29,31 +31,31 @@ function InputSample<T extends FieldValues = FieldValues>(props: InputSampleProp
     labelClasses,
     inputClasses,
     wrapperClasses,
-    ...inputProps
+    ...textareaProps
   } = props;
-  const inputName = registerName as T[keyof T];
+  const textareaName = registerName as T[keyof T];
   const animate = { marginBottom: errorMessage ? '24px' : '0' };
-  const wrapperClassName = `input-sample${wrapperClasses ? ` ${wrapperClasses}` : ''}`;
-  const labelClassName = `input-sample__label${labelClasses ?
+  const wrapperClassName = `form-textarea${wrapperClasses ? ` ${wrapperClasses}` : ''}`;
+  const labelClassName = `form-textarea__label${labelClasses ?
     ` ${labelClasses}` : ''}${errorMessage ?
     ' label-error' : ''}`;
-  const inputClassName = `input-sample__input${inputClasses ?
+  const inputClassName = `form-textarea__input${inputClasses ?
     ` ${inputClasses}` : ''}${errorMessage ?
     ' input-error' : ''}`;
 
   return (
     <div className={wrapperClassName} style={wrapperStyle}>
       {label ? (
-        <label className={labelClassName} htmlFor={inputName}>
+        <label className={labelClassName} htmlFor={textareaName}>
           {label}
         </label>
       ) : null}
-      <motion.div className="input-sample__input-wrapper" animate={animate}>
-        <input
+      <motion.div className="form-textarea__input-wrapper" animate={animate}>
+        <Textarea
           className={inputClassName}
-          id={inputName}
-          {...register(inputName)}
-          {...inputProps}
+          id={textareaName}
+          {...register(textareaName)}
+          {...textareaProps}
         />
       </motion.div>
       {errorMessage && <ErrorMessage message={errorMessage} />}
@@ -61,4 +63,4 @@ function InputSample<T extends FieldValues = FieldValues>(props: InputSampleProp
   );
 }
 
-export default InputSample;
+export default FormTextarea;

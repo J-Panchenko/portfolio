@@ -59,7 +59,7 @@ function CustomButton(props: CustomButtonProps) {
   );
 
   return (
-    <div className={`${size} ${colorScheme}`}>
+    <div className={`button ${size} ${colorScheme}`}>
       <button
         {...buttonProps}
         className={className + ` ${variant}`}
