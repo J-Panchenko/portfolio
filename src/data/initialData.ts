@@ -34,7 +34,7 @@ export const contacts: Contact[] = [
   },
   {
     id: 'github',
-    title: 'Github',
+    title: 'GitHub',
     value: 'https://github.com/J-Panchenko',
   },
   {

@@ -1,8 +1,17 @@
 import * as z from 'zod';
 import { FormInput, FormTextarea } from 'components/Inputs';
-import ContactInfo from 'components/ContactInfo';
+import { IoLocation, IoMail } from 'react-icons/io5';
+import {
+  SiGithub,
+  SiGmail,
+  SiInstagram,
+  SiLinkedin,
+  SiTelegram,
+} from 'react-icons/si';
+import { contacts, schemaForm } from 'data';
 import { CustomButton } from 'components/Buttons';
-import { schemaForm } from 'data';
+import { Tooltip } from '@chakra-ui/react';
+import { ReactComponent as Ukraine } from 'assets/images/icons/ukraine.svg';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './GetInTouch.scss';
@@ -26,6 +35,23 @@ function GetInTouch() {
     reset();
   };
 
+  const getSocialIcon = (social: SocialId) => {
+    switch (social) {
+    case 'github':
+      return <SiGithub className="contact-info__icon" />;
+    case 'email':
+      return <SiGmail className="contact-info__icon" />;
+    case 'instagram':
+      return <SiInstagram className="contact-info__icon" />;
+    case 'linkedin':
+      return <SiLinkedin className="contact-info__icon" />;
+    case 'telegram':
+      return <SiTelegram className="contact-info__icon" />;
+    default:
+      return null;
+    }
+  };
+
   return (
     <section className="get-in-touch">
       <h1 className="get-in-touch__title">
@@ -36,20 +62,41 @@ function GetInTouch() {
           className="get-in-touch__form"
           onSubmit={handleSubmit(onSubmit)}
         >
-          <h2 className="get-in-touch__form-title">
-            Open to cooperation and work proposals
-          </h2>
+          <div className="contact-info">
+            <p className="contact-info__description">
+              I am open to cooperation and work proposals.
+              <br />
+              Feel free to contact me.
+            </p>
+            <ul className="contact-info__main">
+              <li className="contact-info__main-email">
+                <IoMail className="contact-info__main-location-icon" />
+                <p className="contact-info__main-email-text">
+                  panchenko.yuka@gmail.com
+                </p>
+              </li>
+              <li className="contact-info__main-location">
+                <IoLocation className="contact-info__main-location-icon" />
+                <p className="contact-info__main-location-text">
+                  Ukraine, Kyiv
+                </p>
+                <Ukraine className="contact-info__main-location-flag" />
+              </li>
+            </ul>
+          </div>
           <div className="get-in-touch__form--top">
             <FormInput
               register={register}
               label="Name"
               registerName="name"
+              placeholder="Enter your name..."
               errorMessage={errors.name?.message}
             />
             <FormInput
               register={register}
               label="Email"
               registerName="email"
+              placeholder="Enter your email..."
               errorMessage={errors.email?.message}
             />
           </div>
@@ -61,16 +108,38 @@ function GetInTouch() {
             errorMessage={errors.message?.message}
             size="lg"
             resize="vertical"
-            minHeight={200}
+            minHeight={150}
           />
-          <CustomButton
-            type="submit"
-            text="Send Message"
-            disabled={!isValid}
-            colorScheme="secondary"
-          />
+          <div className="get-in-touch__form--bottom">
+            <ul className="get-in-touch__list">
+              {contacts.map(({ id, title, value }: Contact) => (
+                <li className="get-in-touch__item" key={id} title={title}>
+                  <Tooltip
+                    label={title}
+                    aria-label={title}
+                    placement="top"
+                    paddingBottom="0.7rem"
+                  >
+                    <a
+                      className="get-in-touch__item-link"
+                      href={id === 'email' ? `mailto:${value}` : value}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {getSocialIcon(id)}
+                    </a>
+                  </Tooltip>
+                </li>
+              ))}
+            </ul>
+            <CustomButton
+              type="submit"
+              text="Send Message"
+              disabled={!isValid}
+              colorScheme="secondary"
+            />
+          </div>
         </form>
-        <ContactInfo />
       </div>
     </section>
   );

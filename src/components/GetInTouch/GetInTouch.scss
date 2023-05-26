@@ -3,11 +3,14 @@
 
 .get-in-touch {
   width: 100%;
+  height: max-content;
 
   &__container {
-    @include flexRowWrap(40px, center, center);
-    width: 100%;
+    @include flexRowWrap(42px, center, center);
+    width: 85%;
     height: 100%;
+    padding: 0 24px;
+    margin: 0 auto;
   }
 
   &__title {
@@ -19,24 +22,98 @@
 
   &__form {
     @include flexColumnNoWrap(24px, flex-start, flex-start);
-    background:  linear-gradient(120deg, $beige3 0%, $beige1 27%, $beige2 73%, $beige2 100%);
+    background: linear-gradient(200deg, $beige3 0%, $beige1 33%, $beige2 73%, $beige2 100%);
     padding: 24px 36px;
     border-radius: 8px;
     height: 100%;
-    flex-grow: 1;
-
-    &-title {
-      @include fontRegular(18px, 24px);
-      color: $secondary;
-    }
+    flex-grow: 2;
 
     &--top {
       @include flexRowNoWrap(24px, flex-start, flex-start);
       width: 100%;
     }
 
+    &--bottom {
+      @include flexRowNoWrap(24px, flex-start, space-between);
+      width: 100%;
+      margin-top: auto;
+    }
+
     .button {
       margin-left: auto;
+    }
+  }
+
+  &__list {
+    width: fit-content;
+    height: 100%;
+    margin-top: auto;
+    @include flexRowNoWrap(24px, flex-start, flex-start);
+    padding: 12px;
+  }
+
+  &__item {
+    &-link {
+      cursor: pointer;
+
+      svg {
+        width: 32px;
+        height: 32px;
+        color: $secondary;
+        transition: $transition;
+
+        &:hover {
+          color: $dark-grey;
+        }
+      }
+    }
+  }
+}
+
+.contact-info {
+  @include flexRowNoWrap(16px, center, space-between);
+  width: 100%;
+
+  &__description {
+    @include fontRegular(18px, 24px);
+    color: $secondary;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    color: $secondary;
+  }
+
+  &__main {
+    @include flexRowNoWrap(24px, flex-start, flex-start);
+
+    &-location {
+      @include flexRowNoWrap(16px, center, flex-start);
+      width: 100%;
+
+      &-icon {
+        width: 48px;
+        height: 48px;
+        padding: 12px;
+        color: $secondary;
+        border: 1px solid $primary;
+        border-radius: 50%;
+        background: rgba($color: $primary, $alpha: 0.3);
+      }
+
+      &-text {
+        font-weight: 600;
+      }
+    }
+
+    &-email {
+      @include flexRowNoWrap(16px, center, flex-start);
+      width: 100%;
+
+      &-text {
+        font-weight: 600;
+      }
     }
   }
 }
