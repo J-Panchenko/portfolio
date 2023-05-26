@@ -87,16 +87,14 @@ function GetInTouch() {
           <div className="get-in-touch__form--top">
             <FormInput
               register={register}
-              label="Name"
+              label="Your name or company"
               registerName="name"
-              placeholder="Enter your name..."
               errorMessage={errors.name?.message}
             />
             <FormInput
               register={register}
               label="Email"
               registerName="email"
-              placeholder="Enter your email..."
               errorMessage={errors.email?.message}
             />
           </div>
