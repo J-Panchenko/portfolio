@@ -15,6 +15,18 @@ declare global {
     title: string;
     value: string;
   }
+
+  interface WorkItem {
+    id: string;
+    title: string;
+    subtitle: string;
+    cover: string;
+    description: string;
+    link: string;
+    secondaryLink?: string;
+    tags: string[];
+    images: string[];
+  }
 }
 
 export { };

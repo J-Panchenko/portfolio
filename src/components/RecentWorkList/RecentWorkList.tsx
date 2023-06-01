@@ -1,7 +1,10 @@
 import RecentWorkItem from './RecentWorkItem';
+import { recentWork } from 'data';
+import { useState } from 'react';
 import './RecentWorkList.scss';
 
 function RecentWorkList() {
+  const [openDescription, setOpenDescription] = useState<string>('');
 
   return (
     <section className="recent-work">
@@ -9,7 +12,15 @@ function RecentWorkList() {
         What did I work on?
       </h1>
       <ul className="recent-work__list">
-        <RecentWorkItem value="Full Vegan Belly" />
+        {recentWork.map((item: WorkItem) => (
+          <RecentWorkItem
+            key={item.id}
+            id={item.id}
+            cover={item.cover}
+            title={item.title}
+            openDescription={setOpenDescription}
+          />
+        ))}
       </ul>
     </section>
   );
