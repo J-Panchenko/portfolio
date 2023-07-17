@@ -12,6 +12,8 @@ import { contacts, schemaForm } from 'data';
 import { CustomButton } from 'components/Buttons';
 import { Tooltip } from '@chakra-ui/react';
 import { ReactComponent as Ukraine } from 'assets/images/icons/ukraine.svg';
+import axios from 'axios';
+import { encode } from 'js-base64';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './GetInTouch.scss';
@@ -30,8 +32,46 @@ function GetInTouch() {
     delayError: 500,
   });
 
-  const onSubmit = (data: UserForm) => {
-    alert(`Your data is valid: ${JSON.stringify(data, null, 2)}`);
+  const onSubmit = async (data: UserForm) => {
+    try {
+      const apiKey = '8ce1cd3e971f8b5e93bb9b6acb3ddd37';
+      const apiSecret = 'b2440e5fd72a6cf3c72615d75fb54819';
+      const auth = encode(`${apiKey}:${apiSecret}`);
+      const response = await axios.post(
+        'https://api.mailjet.com/v3.1/send',
+        {
+          Messages: [
+            {
+              From: {
+                Email: data.email,
+              },
+              To: [
+                {
+                  Email: 'panchenko.yuka@gmail.com',
+                },
+              ],
+              Subject: data.name,
+              TextPart: data.message,
+            },
+          ],
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Basic ${auth}`,
+          },
+        }
+      );
+
+      if (response.status === 200) {
+        console.log('Message sent successfully!');
+      } else {
+        console.log('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.log('An error occurred. Please try again later.');
+      console.log(error);
+    }
     reset();
   };
 
