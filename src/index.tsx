@@ -1,6 +1,6 @@
 import App from 'App';
-import { BrowserRouter } from 'react-router-dom';
 import { ErrorBoundary } from 'components';
+import { HashRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import reportWebVitals from 'reportWebVitals';
 import './index.css';
@@ -8,11 +8,11 @@ import './index.css';
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
-  <BrowserRouter>
+  <HashRouter>
     <ErrorBoundary>
       <App />
     </ErrorBoundary>
-  </BrowserRouter>
+  </HashRouter>
 );
 
 reportWebVitals();
