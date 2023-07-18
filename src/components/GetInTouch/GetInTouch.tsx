@@ -21,6 +21,7 @@ type UserForm = z.infer<typeof schemaForm>;
 function GetInTouch() {
   const {
     register,
+    reset,
     formState: { errors, isValid },
   } = useForm<UserForm>({
     resolver: zodResolver(schemaForm),
@@ -53,6 +54,7 @@ function GetInTouch() {
       <div className="get-in-touch__container">
         <form
           className="get-in-touch__form"
+          target="_blank"
           action="https://formsubmit.co/panchenko.yuka@gmail.com"
           method="POST"
         >
@@ -129,6 +131,7 @@ function GetInTouch() {
               text="Send Message"
               disabled={!isValid}
               colorScheme="secondary"
+              onClick={() => setTimeout(() => reset(), 7000)}
             />
           </div>
         </form>
