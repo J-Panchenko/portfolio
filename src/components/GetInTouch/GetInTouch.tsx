@@ -20,21 +20,13 @@ type UserForm = z.infer<typeof schemaForm>;
 
 function GetInTouch() {
   const {
-    reset,
     register,
-    handleSubmit,
     formState: { errors, isValid },
   } = useForm<UserForm>({
     resolver: zodResolver(schemaForm),
     mode: 'onChange',
     delayError: 500,
   });
-
-  const onSubmit = async (data: UserForm) => {
-    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-    const { name, email, message } = data;
-    reset();
-  };
 
   const getSocialIcon = (social: SocialId) => {
     switch (social) {
@@ -61,7 +53,8 @@ function GetInTouch() {
       <div className="get-in-touch__container">
         <form
           className="get-in-touch__form"
-          onSubmit={handleSubmit(onSubmit)}
+          action="https://formsubmit.co/panchenko.yuka@gmail.com"
+          method="POST"
         >
           <div className="contact-info">
             <p className="contact-info__description">
