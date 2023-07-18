@@ -55,7 +55,7 @@ function GetInTouch() {
         <form
           className="get-in-touch__form"
           target="_blank"
-          action="https://formsubmit.co/panchenko.yuka@gmail.com"
+          action="https://formsubmit.co/0dccb1e886340f83d099ded9e4fc3165"
           method="POST"
         >
           <div className="contact-info">
