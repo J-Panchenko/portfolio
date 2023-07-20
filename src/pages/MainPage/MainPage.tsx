@@ -10,7 +10,7 @@ function MainPage() {
   const getContent = (id: MenuId) => {
     switch (id) {
     case 'about':
-      return <AboutMe />;
+      return <AboutMe setActiveTab={setActiveTab} />;
     case 'skills':
       return <MySkills />;
     case 'projects':
@@ -20,7 +20,7 @@ function MainPage() {
     case 'resume':
       return <Resume />;
     default:
-      return <AboutMe />;
+      return <Resume />;
     }
   };
 

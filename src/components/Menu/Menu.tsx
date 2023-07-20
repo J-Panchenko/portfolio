@@ -22,7 +22,7 @@ function Menu({
 
   useEffect(() => {
     getOffsetMenuBorder(activeTab);
-  });
+  }, [activeTab]);
 
   const getOffsetMenuBorder = (id: MenuId) => {
     const element = document.getElementById(id);

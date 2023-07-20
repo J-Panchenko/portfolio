@@ -35,6 +35,11 @@
       position: absolute;
       transform: scale(0);
       transition: background-color $duration, transform $duration;
+
+      @media screen and (max-width: 540px) {
+        width: 3.2em;
+        height: 3.2em;
+      }
     }
 
     &.active {
@@ -86,6 +91,26 @@
   background-color: $secondary;
   transition: transform var(--timeOut, $duration);
 
+  @media screen and (max-width: 800px) {
+    width: 8.9em;
+    height: 2em;
+  }
+
+  @media screen and (max-width: 670px) {
+    width: 7.9em;
+    height: 1.8em;
+  }
+
+  @media screen and (max-width: 540px) {
+    width: 6em;
+    height: 1.4em;
+    bottom: 98%;
+  }
+
+  @media screen and (max-width: 420px) {
+    width: 5em;
+    height: 1em;
+  }
 }
 
 .svg-container {

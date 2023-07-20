@@ -5,5 +5,115 @@
   &__title {
     @include fontSemibold(36px, 48px);
     color: $secondary;
+    margin-bottom: 32px;
+  }
+
+  &__list {
+    padding: 0 40px;
+    margin-bottom: 40px;
+
+    @media screen and (max-width: 620px) {
+      padding: 0 8px;
+    }
+  }
+
+  &__item {
+    @include flexRowNoWrap(16px, center, flex-start);
+    @include fontMedium(20px, 28px);
+    color: $secondary;
+    margin-bottom: 24px;
+  }
+
+  &__nav-btn {
+    @include fontMedium(20px, 28px);
+    display: inline;
+    color: $secondary-hover;
+    text-decoration: underline;
+    font-style: italic;
+    transition: $transition;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  &__icon {
+    width: 28px;
+    height: 28px;
+
+    &-container {
+      display: flex;
+    }
+
+    &--primary {
+      color: $primary;
+    }
+  }
+
+  &__cards {
+    @include flexRowWrap(40px, flex-start, center);
+    margin-bottom: 40px;
+    padding: 0 40px;
+
+    @media screen and (max-width: 1320px) {
+      @include flexRowWrap(16px, flex-start, flex-start);
+    }
+
+    @media screen and (max-width: 1120px) {
+      @include flexColumnNoWrap(40px, flex-start, flex-start);
+    }
+
+    @media screen and (max-width: 620px) {
+      padding: 0 8px;
+    }
+  }
+
+  &__card {
+    @include flexColumnNoWrap(16px, flex-start, flex-start);
+    min-width: 45%;
+    width: fit-content;
+    max-width: 470px;
+    min-height: 276px;
+    padding: 24px 32px;
+    border-radius: 8px;
+    background-color: $white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+    transition: $transition;
+
+    @media screen and (max-width: 1320px) {
+      min-height: 320px;
+    }
+
+    @media screen and (max-width: 1120px) {
+      width: 100%;
+      max-width: 90%;
+    }
+
+    @media screen and (max-width: 620px) {
+      width: 100%;
+      max-width: 100%;
+      padding: 16px 24px;
+    }
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    &-title {
+      @include flexRowNoWrap(12px, center, flex-start);
+      @include fontSemibold(24px, 32px);
+      color: $secondary;
+    }
+
+    &-list {
+      list-style: square;
+      padding-left: 24px;
+    }
+
+    &-item {
+      @include fontMedium(18px, 28px);
+      color: $secondary;
+      margin-bottom: 8px;
+    }
   }
 }

@@ -115,7 +115,7 @@ function WelcomePage() {
           colorScheme="secondary"
           rightIcon={<FaArrowRight />}
           style={{ width: '270px' }}
-          onClick={() => navigate('/about-me')}
+          onClick={() => navigate('/info')}
         />
       </div>
       <BgAuthor />

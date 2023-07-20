@@ -1,22 +1,88 @@
-/* eslint-disable max-len */
+import { Dispatch, SetStateAction } from 'react';
+import { GiSpeedometer, GiStopwatch, GiTechnoHeart } from 'react-icons/gi';
+import { aboutMe, aboutMeMain } from 'data';
 import './AboutMe.scss';
 
-function AboutMe() {
+interface AboutMeProps {
+  setActiveTab: Dispatch<SetStateAction<MenuId>>;
+}
+
+function AboutMe({ setActiveTab }: AboutMeProps) {
 
   return (
     <section className="about-me">
       <h1 className="about-me__title">
         Who am I?
       </h1>
-      <p className="about-me__text">
-        I am a Frontend Developer with 2 years of experience in web development. I have a passion for web design and love to create for web and mobile devices.
-      </p>
-      <p className="about-me__text">
-        I am a self-taught developer and I am always looking for new opportunities to learn and grow. I am a hard-working person, a team player, and I am always ready to help others.
-      </p>
-      <p className="about-me__text">
-        I am a self-motivated person and I am always looking for new challenges. I am a fast learner and I am always ready to learn new things.
-      </p>
+      <ul className="about-me__list">
+        {aboutMeMain.map((item: AboutItem) => (
+          <li key={item.id} className="about-me__item">
+            <p className="about-me__icon-container">
+              {item.icon}
+            </p>
+            <p className="about-me__text">
+              {item.text}
+              {item.id === 'stack' && (
+                <button
+                  className="about-me__nav-btn"
+                  type="button"
+                  onClick={() => setActiveTab('skills')}
+                >
+                  etc.
+                </button>
+              )}
+            </p>
+          </li>
+        ))}
+      </ul>
+      <ul className="about-me__cards">
+        <li className="about-me__card">
+          <div className="about-me__card-title">
+            <p className="about-me__icon-container">
+              <GiSpeedometer className="about-me__icon about-me__icon--primary" />
+            </p>
+            <h2 className="about-me__card-title">
+              I am:
+            </h2>
+          </div>
+          <ul className="about-me__card-list">
+            {aboutMe.iAm.map((item, index) => (
+              <li key={index} className="about-me__card-item">
+                <p className="about-me__card-text">
+                  {item}
+                </p>
+              </li>))}
+          </ul>
+        </li>
+        <li className="about-me__card">
+          <div className="about-me__card-title">
+            <p className="about-me__icon-container">
+              <GiStopwatch className="about-me__icon about-me__icon--primary" />
+            </p>
+            <h2 className="about-me__card-title">
+              I can:
+            </h2>
+          </div>
+          <ul className="about-me__card-list">
+            {aboutMe.iCan.map((item, index) => (
+              <li key={index} className="about-me__card-item">
+                <p className="about-me__card-text">
+                  {item}
+                </p>
+              </li>))}
+          </ul>
+        </li>
+      </ul >
+      <ul className="about-me__list">
+        <li className="about-me__item">
+          <p className="about-me__icon-container">
+            <GiTechnoHeart className="about-me__icon" />
+          </p>
+          <p className="about-me__text">
+            {aboutMe.hobbies}
+          </p>
+        </li>
+      </ul>
     </section>
   );
 }

@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import MainPage from 'pages/MainPage';
-// import { ProtectedRoute } from 'components';
 import { WelcomePage } from 'pages';
 import './App.scss';
 
@@ -14,10 +13,7 @@ function App() {
         <Route path="/" element={<Navigate to="/welcome" />} />
         <Route path="*" element={<Navigate to="/welcome" />} />
         <Route path="welcome" element={<WelcomePage />} />
-        <Route
-          path="about-me"
-          element={<MainPage />}
-        />
+        <Route path="info" element={<MainPage />} />
       </Routes>
     </AnimatePresence>
   );

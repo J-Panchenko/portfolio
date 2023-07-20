@@ -10,6 +10,12 @@ declare global {
     title: string;
   }
 
+  interface AboutItem {
+    id: string;
+    icon: JSX.Element;
+    text: string;
+  }
+
   interface Contact {
     id: SocialId;
     title: string;

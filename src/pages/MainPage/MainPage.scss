@@ -17,6 +17,10 @@
     height: 100%;
     margin: auto;
     padding: 0 40px;
+
+    @media screen and (max-width: 620px) {
+      padding: 0 16px;
+    }
   }
 
   &__content {
