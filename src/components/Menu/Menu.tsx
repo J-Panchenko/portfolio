@@ -42,6 +42,7 @@ function Menu({
   const onChangeActiveTab = (id: MenuId) => {
     getOffsetMenuBorder(id);
     setActiveTab(id);
+    localStorage.setItem('activeTab', id);
   };
 
   const getMenuIcon = (icon: number) => {

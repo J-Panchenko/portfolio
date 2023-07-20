@@ -5,7 +5,8 @@ import { useState } from 'react';
 import './MainPage.scss';
 
 function MainPage() {
-  const [activeTab, setActiveTab] = useState<MenuId>('about');
+  const [activeTab, setActiveTab] = useState<MenuId>(
+    localStorage.getItem('activeTab') as MenuId || 'about');
 
   const getContent = (id: MenuId) => {
     switch (id) {
