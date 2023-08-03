@@ -1,8 +1,8 @@
 import { aboutMe, aboutMeMain } from './aboutMe';
 import { contacts, menuList } from './initialData';
+import { recentWork, recentWorkInitial } from './recentWork';
 import { error } from './userMessage';
 import { externalLinks } from './externalLinks';
-import { recentWork } from './recentWork';
 import { schemaForm } from './schemaForm';
 
 export {
@@ -13,5 +13,6 @@ export {
   schemaForm,
   externalLinks,
   recentWork,
+  recentWorkInitial,
   error,
 };

@@ -1,10 +1,22 @@
+import { recentWork, recentWorkInitial } from 'data';
+import { useEffect, useState } from 'react';
+import { RecentWorkFullInfo } from 'components/Modals';
 import RecentWorkItem from './RecentWorkItem';
-import { recentWork } from 'data';
-import { useState } from 'react';
 import './RecentWorkList.scss';
 
 function RecentWorkList() {
   const [openDescription, setOpenDescription] = useState<string>('');
+  const [selectedWork, setSelectedWork] = useState<WorkItem | null>(null);
+
+  useEffect(() => {
+    if (openDescription) {
+      const work = recentWork
+        .find((item: WorkItem) => item.id === openDescription);
+      setSelectedWork(work || null);
+    } else {
+      setSelectedWork(null);
+    }
+  }, [openDescription]);
 
   return (
     <section className="recent-work">
@@ -22,6 +34,11 @@ function RecentWorkList() {
           />
         ))}
       </ul>
+      <RecentWorkFullInfo
+        isOpen={!!selectedWork}
+        onClose={() => setOpenDescription('')}
+        selectedWork={selectedWork || recentWorkInitial}
+      />
     </section>
   );
 }

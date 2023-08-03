@@ -1,0 +1,53 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.recent-work-full-info {
+  &__title {
+    @include fontSemibold(30px, 42px);
+    color: $secondary;
+  }
+
+  &__subtitle {
+    @include fontRegular(18px, 30px);
+    color: $middle-grey;
+    width: 100%;
+  }
+
+  &__container {
+    display: grid;
+    grid-template-columns: calc(60% - 12px) calc(40% - 12px);
+    gap: 24px;
+    padding: 0 24px 24px;
+    width: 100%;
+  }
+
+  &__info {
+    @include flexColumnNoWrap(24px, flex-start, flex-start);
+
+    &-tags {
+      @include flexRowWrap(8px, center, flex-start);
+      width: 100%;
+    }
+
+    &-tag {
+      @include fontSemibold(14px, 24px);
+      color: $primary-hover;
+      background-color: $white;
+      border: 1px solid $primary;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    &-duties {
+      @include fontRegular(16px, 24px);
+      color: $middle-grey;
+      width: 100%;
+      margin-bottom: auto;
+    }
+
+    &-links {
+      @include flexRowNoWrap(8px, flex-end, flex-end);
+      width: 100%;
+    }
+  }
+}

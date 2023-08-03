@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
+import { motion } from 'framer-motion';
 import './RecentWorkItem.scss';
 
 interface RecentWorkItemProps {
@@ -16,9 +17,12 @@ function RecentWorkItem({
 }: RecentWorkItemProps) {
 
   return (
-    <li
+    <motion.li
       className="recent-work-item"
       title={title}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
     >
       <button
         type="button"
@@ -34,7 +38,7 @@ function RecentWorkItem({
           {title}
         </p>
       </button>
-    </li>
+    </motion.li>
   );
 }
 

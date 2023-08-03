@@ -27,9 +27,9 @@ declare global {
     title: string;
     subtitle: string;
     cover: string;
-    description: string;
-    link: string;
-    secondaryLink?: string;
+    myDuties: string;
+    website?: string;
+    aboutLink?: string;
     tags: string[];
     images: string[];
   }
