@@ -1,4 +1,5 @@
 import App from 'App';
+import { ChakraProvider } from '@chakra-ui/react';
 import { ErrorBoundary } from 'components';
 import { HashRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
@@ -10,7 +11,9 @@ const root = createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <HashRouter>
     <ErrorBoundary>
-      <App />
+      <ChakraProvider>
+        <App />
+      </ChakraProvider>
     </ErrorBoundary>
   </HashRouter>
 );

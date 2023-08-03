@@ -4,7 +4,6 @@ import {
   TextareaHTMLAttributes,
 } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
-import { Textarea, TextareaProps } from '@chakra-ui/react';
 import ErrorMessage from 'components/ErrorMessage';
 import { motion } from 'framer-motion';
 import './FormTextarea.scss';
@@ -18,8 +17,7 @@ type FormTextareaProps<T extends FieldValues> = {
   labelClasses?: string;
   inputClasses?: string;
   wrapperClasses?: string;
-} & TextareaProps
-  & DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
+} & DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
 
 function FormTextarea<T extends FieldValues = FieldValues>(props: FormTextareaProps<T>) {
   const {
@@ -51,7 +49,7 @@ function FormTextarea<T extends FieldValues = FieldValues>(props: FormTextareaPr
         </label>
       ) : null}
       <motion.div className="form-textarea__input-wrapper" animate={animate}>
-        <Textarea
+        <textarea
           className={inputClassName}
           id={textareaName}
           {...register(textareaName)}

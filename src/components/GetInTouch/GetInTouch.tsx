@@ -89,7 +89,7 @@ function GetInTouch() {
             />
             <FormInput
               register={register}
-              label="Email"
+              label="Your email"
               registerName="email"
               errorMessage={errors.email?.message}
             />
@@ -97,12 +97,9 @@ function GetInTouch() {
           <FormTextarea
             register={register}
             placeholder="Write your message here..."
-            label="Message"
+            label="Your message"
             registerName="message"
             errorMessage={errors.message?.message}
-            size="lg"
-            resize="vertical"
-            minHeight={150}
           />
           <div className="get-in-touch__form--bottom">
             <ul className="get-in-touch__list">
