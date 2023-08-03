@@ -17,8 +17,8 @@
     position: relative;
 
     &:before {
-      @include fontMedium(16px, 24px);
-      content: 'Click to see more...';
+      @include fontMedium(14px, 18px);
+      content: 'Click me =)';
       position: absolute;
       display: none;
       left: 50%;
@@ -26,10 +26,10 @@
       transform: translate(-50%, -50%);
       width: fit-content;
       height: fit-content;
-      background-color: $white;
+      background-color: rgba($color: $beige3, $alpha: 0.5);
       border-radius: 4px;
-      padding: 2px 8px;
-      color: $secondary;
+      padding: 4px 8px;
+      color: $white;
       white-space: nowrap;
       transition: $transition;
     }
@@ -49,6 +49,7 @@
     object-fit: cover;
     width: 100%;
     z-index: -1;
+    color: rgba($color: $secondary, $alpha: 0.5)
   }
 
   &__title {
@@ -59,5 +60,6 @@
     left: 50%;
     top: 45%;
     transform: translate(-50%, -50%);
+    filter: drop-shadow(0 0 4px $beige3);
   }
 }

@@ -4,6 +4,7 @@
 .photo-slider {
   position: relative;
   width: 100%;
+  height: fit-content;
 
   &__container {
     position: relative;
@@ -11,9 +12,19 @@
     border-radius: 8px;
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
     background-color: whitesmoke;
-    min-height: 400px;
+    min-height: 420px;
+    max-width: 650px;
     width: 100%;
+    height: fit-content;
     margin: 0 auto;
+
+    @media screen and (max-width: 650px) {
+      min-height: 300px;
+    }
+
+    @media screen and (max-width: 500px) {
+      min-height: 240px;
+    }
   }
 
   &__image {

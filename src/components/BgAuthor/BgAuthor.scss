@@ -11,6 +11,7 @@
     &-text {
       @include fontRegular(12px, 21px);
       color: $middle-grey;
+      white-space: nowrap;
     }
 
     &-link {

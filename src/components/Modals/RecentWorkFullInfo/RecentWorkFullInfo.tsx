@@ -1,6 +1,7 @@
 import { Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react';
 import { CustomButton } from 'components/Buttons';
 import PhotoSlider from 'components/PhotoSlider';
+import { useScreenDimensions } from 'hooks';
 import './RecentWorkFullInfo.scss';
 
 interface RecentWorkFullInfoProps {
@@ -14,6 +15,7 @@ function RecentWorkFullInfo({
   onClose,
   selectedWork,
 }: RecentWorkFullInfoProps) {
+  const { screenWidth } = useScreenDimensions();
 
   return (
     <Modal
@@ -22,7 +24,7 @@ function RecentWorkFullInfo({
       onClose={onClose}
       onEsc={onClose}
       motionPreset="scale"
-      size="5xl"
+      size={screenWidth > 1024 ? '5xl' : 'full'}
       closeOnOverlayClick={false}
     >
       <ModalOverlay />

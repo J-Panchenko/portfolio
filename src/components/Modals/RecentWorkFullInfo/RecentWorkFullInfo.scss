@@ -15,14 +15,18 @@
 
   &__container {
     display: grid;
-    grid-template-columns: calc(60% - 12px) calc(40% - 12px);
+    grid-template-columns: calc(64% - 12px) calc(36% - 12px);
     gap: 24px;
     padding: 0 24px 24px;
     width: 100%;
+
+    @media screen and (max-width: 1024px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__info {
-    @include flexColumnNoWrap(24px, flex-start, flex-start);
+    @include flexColumnNoWrap(16px, flex-start, flex-start);
 
     &-tags {
       @include flexRowWrap(8px, center, flex-start);
