@@ -1,0 +1,36 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.other-skills {
+  @include flexColumnWrap(24px, center, flex-start);
+  width: 95%;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border: 2px solid $block4;
+  border-radius: 24px;
+  background-color: rgba($color: $block4, $alpha: 0.2);
+  transition: $transition;
+  
+  &:hover {
+    scale: 1.01;
+    box-shadow: $shadow-modal;
+  }
+
+  &__info {
+    @include flexRowNoWrap(8px);
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &-title {
+      @include fontMedium(24px, 32px);
+      color: $secondary-hover;
+    }
+  }
+
+  &__list {
+    @include flexRowWrap(4px, center, center);
+  }
+}

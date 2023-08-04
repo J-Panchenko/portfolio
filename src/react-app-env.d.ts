@@ -33,6 +33,13 @@ declare global {
     tags: string[];
     images: string[];
   }
+
+  interface SkillItem {
+    id: string;
+    name: string;
+    icon?: JSX.Element;
+    isFavorite: boolean;
+  }
 }
 
 export { };

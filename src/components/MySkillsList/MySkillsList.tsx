@@ -1,7 +1,9 @@
-import MySkillsItem from './MySkillsItem';
+import { MainBaseSkills, MainImportantSkills, MainSecondarySkills, OtherSkills } from '.';
+import { skills } from 'data';
 import './MySkillsList.scss';
 
 function MySkillsList() {
+  const { base, mustHave, libraries, ...restGroup } = skills;
 
   return (
     <section className="my-skills">
@@ -9,7 +11,18 @@ function MySkillsList() {
         What do I use?
       </h1>
       <ul className="my-skills__list">
-        <MySkillsItem value="React" />
+        <li className="my-skills__list-item">
+          <MainBaseSkills skillsGroup={base} />
+        </li>
+        <li className="my-skills__list-item">
+          <MainImportantSkills skillsGroup={mustHave} />
+        </li>
+        <li className="my-skills__list-item">
+          <MainSecondarySkills {...restGroup} />
+        </li>
+        <li className="my-skills__list-item">
+          <OtherSkills skillsGroup={libraries} />
+        </li>
       </ul>
     </section>
   );

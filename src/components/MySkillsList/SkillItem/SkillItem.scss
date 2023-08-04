@@ -1,0 +1,17 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.my-skills-item {
+  @include flexRowNoWrap(8px);
+  @include fontMedium(14px, 20px);
+  color: $secondary;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: $white;
+  width: fit-content;
+  height: fit-content;
+
+  &--favorite {
+    color: $primary;
+  }
+}

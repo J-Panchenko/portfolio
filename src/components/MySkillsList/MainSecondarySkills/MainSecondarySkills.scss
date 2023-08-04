@@ -1,0 +1,62 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.main-secondary-skills {
+  @include flexColumnWrap(24px, center, flex-start);
+  width: 75%;
+  margin: 0 auto;
+  padding: 12px 24px;
+  border: 2px solid $block3;
+  border-radius: 24px;
+  background-color: rgba($color: $block3, $alpha: 0.2);
+  transition: $transition;
+  
+  &:hover {
+    scale: 1.01;
+    box-shadow: $shadow-modal;
+  }
+
+  &__info {
+    @include flexRowNoWrap(8px);
+
+    &-icon {
+      width: 24px;
+      height: 24px;
+    }
+
+    &-title {
+      @include fontMedium(24px, 32px);
+      color: $secondary-hover;
+    }
+  }
+
+  &__list {
+    @include flexRowWrap(16px, flex-start, center);
+    padding: 8px 0;
+    width: 100%;
+
+    &-item {
+      width: 30%;
+      margin: 0 auto;
+      @include flexColumnWrap(8px, center, flex-start);
+
+      .skills-group {
+        @include flexRowNoWrap(4px);
+
+        &__icon {
+          width: 16px;
+          height: 16px;
+        }
+    
+        &__title {
+          @include fontMedium(16px, 24px);
+          color: $secondary-hover;
+        }
+
+        &__list {
+          @include flexRowWrap(4px, center, center);
+        }
+      }
+    }
+  }
+}
