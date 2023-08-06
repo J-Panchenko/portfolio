@@ -6,18 +6,30 @@
   width: 50%;
   margin: 0 auto;
   padding: 12px 24px;
-  border: 2px solid $primary-hover;
+  border: 2px solid $cyan700;
   border-radius: 24px;
-  background-color: rgba($color: $primary-hover, $alpha: 0.2);
+  background-color: rgba($color: $cyan700, $alpha: 0.2);
   transition: $transition;
-  
+
+  @media screen and (max-width: 1024px) {
+    width: 65%;
+  }
+
+  @media screen and (max-width: 500px) {
+    width: 80%;
+  }
+
   &:hover {
     scale: 1.01;
-    box-shadow: $shadow-modal;
+    box-shadow: $shadow;
   }
 
   &__info {
     @include flexRowNoWrap(8px);
+
+    &:hover {
+      filter: drop-shadow(0 0 4px $beige3);
+    }
 
     &-icon {
       width: 24px;
@@ -25,8 +37,12 @@
     }
 
     &-title {
-      @include fontMedium(24px, 32px);
+      @include fontSemibold(24px, 32px);
       color: $secondary-hover;
+
+      @media screen and (max-width: 500px) {
+        @include fontSemibold(20px, 28px);
+      }
     }
   }
 

@@ -3,15 +3,39 @@
 
 .my-skills-item {
   @include flexRowNoWrap(8px);
-  @include fontMedium(14px, 20px);
-  color: $secondary;
-  padding: 4px 8px;
+  @include fontMedium(18px, 24px);
+  color: rgba($color: $cyan900, $alpha: 0.5);
+  padding: 8px 12px;
   border-radius: 4px;
-  background-color: $white;
+  background-color: rgba($color: #EDFDFD, $alpha: 0.8);
   width: fit-content;
   height: fit-content;
 
+  @media screen and (max-width: 500px) {
+    @include fontSemibold(14px, 20px);
+  }
+
   &--favorite {
-    color: $primary;
+    color: $cyan900;
+    position: relative;
+    transition: $transition;
+
+    &::after {
+      content: '❤️';
+      position: absolute;
+      opacity: 0;
+      top: -20%;
+      right: 6px;
+      transform: rotate(25deg);
+      width: 4px;
+      height: 4px;
+      transition: $transition;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
 }

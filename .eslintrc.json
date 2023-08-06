@@ -59,6 +59,7 @@
     "no-unused-vars": "warn",
     "no-console": "warn",
     "prefer-const": "warn",
+    "react-hooks/exhaustive-deps": "off",
     "max-len": [
       "error",
       {

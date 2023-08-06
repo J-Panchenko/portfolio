@@ -1,6 +1,7 @@
 import { GiBackForth, GiConqueror, GiFlowerPot, GiLegArmor } from 'react-icons/gi';
 import { SkillItem, SkillItemProps } from '..';
-import { Tooltip } from '@chakra-ui/react';
+import Tooltip from 'components/Tooltip';
+import { useState } from 'react';
 import './MainSecondarySkills.scss';
 
 interface MainSecondarySkillsProps {
@@ -10,30 +11,49 @@ interface MainSecondarySkillsProps {
 }
 
 function MainSecondarySkills({ ui, api, tools }: MainSecondarySkillsProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isUiOpen, setIsUiOpen] = useState<boolean>(false);
+  const [isApiOpen, setIsApiOpen] = useState<boolean>(false);
+  const [isToolsOpen, setIsToolsOpen] = useState<boolean>(false);
 
   return (
     <div className="main-secondary-skills">
       <Tooltip
         label="The best way to predict the future is to create it"
-        placement="top"
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
       >
-        <div className="main-secondary-skills__info">
-          <GiLegArmor className="main-secondary-skills__info-icon" />
+        <button
+          className="main-secondary-skills__info"
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div className="other-skills__info-icon-wrapper">
+            <GiLegArmor className="main-secondary-skills__info-icon" />
+          </div>
           <h2 className="main-secondary-skills__info-title">
             Bottom Base
           </h2>
-        </div>
+        </button>
       </Tooltip>
       <ul className="main-secondary-skills__list">
         <li className="main-secondary-skills__list-item">
           <Tooltip
+            small
             label="Everyone sees the world in one's own way"
-            placement="top"
+            isOpen={isUiOpen}
+            setIsOpen={setIsUiOpen}
           >
-            <div className="skills-group">
-              <GiFlowerPot className="skills-group__icon" />
+            <button
+              className="skills-group"
+              type="button"
+              onClick={() => setIsUiOpen(!isUiOpen)}
+            >
+              <div className="other-skills__info-icon-wrapper">
+                <GiFlowerPot className="skills-group__icon" />
+              </div>
               <h3 className="skills-group__title">UI</h3>
-            </div>
+            </button>
           </Tooltip>
           <ul className="skills-group__list">
             {ui.map(({ id, ...restProps }: SkillItem) => (
@@ -43,13 +63,21 @@ function MainSecondarySkills({ ui, api, tools }: MainSecondarySkillsProps) {
         </li>
         <li className="main-secondary-skills__list-item">
           <Tooltip
+            small
             label="Fall down seven times, stand up eight"
-            placement="top"
+            isOpen={isApiOpen}
+            setIsOpen={setIsApiOpen}
           >
-            <div className="skills-group">
-              <GiBackForth className="skills-group__icon" />
+            <button
+              className="skills-group"
+              type="button"
+              onClick={() => setIsApiOpen(!isApiOpen)}
+            >
+              <div className="other-skills__info-icon-wrapper">
+                <GiBackForth className="skills-group__icon" />
+              </div>
               <h3 className="skills-group__title">API</h3>
-            </div>
+            </button>
           </Tooltip>
           <ul className="skills-group__list">
             {api.map(({ id, ...restProps }: SkillItem) => (
@@ -59,13 +87,21 @@ function MainSecondarySkills({ ui, api, tools }: MainSecondarySkillsProps) {
         </li>
         <li className="main-secondary-skills__list-item">
           <Tooltip
+            small
             label="Everyone underwent something that changed him"
-            placement="top"
+            isOpen={isToolsOpen}
+            setIsOpen={setIsToolsOpen}
           >
-            <div className="skills-group">
-              <GiConqueror className="skills-group__icon" />
+            <button
+              className="skills-group"
+              type="button"
+              onClick={() => setIsToolsOpen(!isToolsOpen)}
+            >
+              <div className="other-skills__info-icon-wrapper">
+                <GiConqueror className="skills-group__icon" />
+              </div>
               <h3 className="skills-group__title">Tools</h3>
-            </div>
+            </button>
           </Tooltip>
           <ul className="skills-group__list">
             {tools.map(({ id, ...restProps }: SkillItem) => (

@@ -37,7 +37,6 @@ declare global {
   interface SkillItem {
     id: string;
     name: string;
-    icon?: JSX.Element;
     isFavorite: boolean;
   }
 }

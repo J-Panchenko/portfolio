@@ -1,6 +1,7 @@
 import { SkillItem, SkillItemProps } from '..';
 import { GiPuzzle } from 'react-icons/gi';
-import { Tooltip } from '@chakra-ui/react';
+import Tooltip from 'components/Tooltip';
+import { useState } from 'react';
 import './OtherSkills.scss';
 
 interface OtherSkillsProps {
@@ -8,26 +9,34 @@ interface OtherSkillsProps {
 }
 
 function OtherSkills({ skillsGroup }: OtherSkillsProps) {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <li className="other-skills">
+    <div className="other-skills">
       <Tooltip
         label="Everything you can imagine is real"
-        placement="top"
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
       >
-        <div className="other-skills__info">
-          <GiPuzzle className="other-skills__info-icon" />
+        <button
+          className="other-skills__info"
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <div className="other-skills__info-icon-wrapper">
+            <GiPuzzle className="other-skills__info-icon" />
+          </div>
           <h3 className="other-skills__info-title">
             Treasury of the front-end developer&apos;s achievements &#128513;
           </h3>
-        </div>
+        </button>
       </Tooltip>
       <ul className="other-skills__list">
         {skillsGroup.map(({ id, ...restProps }: SkillItem) => (
           <SkillItem key={id} {...restProps as SkillItemProps} />
         ))}
       </ul>
-    </li>
+    </div>
   );
 }
 
