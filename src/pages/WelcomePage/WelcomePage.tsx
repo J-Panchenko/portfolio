@@ -5,7 +5,7 @@ import {
 } from 'assets/animation';
 import { FaArrowRight } from 'react-icons/fa';
 import { externalLinks } from 'data';
-import me from 'assets/images/welcomePage/me.jpg';
+import me from 'assets/images/me.jpg';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useScreenDimensions } from 'hooks';

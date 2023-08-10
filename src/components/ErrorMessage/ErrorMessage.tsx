@@ -1,4 +1,4 @@
-import { ReactComponent as Warning } from 'assets/images/alertCircle.svg';
+import { ReactComponent as Warning } from 'assets/images/icons/alertCircle.svg';
 import { error } from 'data';
 import { motion } from 'framer-motion';
 import './ErrorMessage.scss';
