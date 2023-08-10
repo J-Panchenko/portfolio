@@ -4,13 +4,36 @@ import { moveXAnimation, switchingPages } from 'assets/animation';
 import { FaArrowRight } from 'react-icons/fa';
 import { externalLinks } from 'data';
 import me from 'assets/images/welcomePage/me.jpg';
-import me1 from 'assets/images/welcomePage/me1.jpg';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
+import { useScreenDimensions } from 'hooks';
 import './WelcomePage.scss';
 
 function WelcomePage() {
   const navigate = useNavigate();
+  const { screenWidth } = useScreenDimensions();
+
+  const myPhoto = (
+    <motion.div
+      className="welcome-page__photo"
+      variants={moveXAnimation}
+      animate="visible"
+      initial="hidden"
+      custom={-300}
+      transition={{ duration: 0.8 }}
+      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.05, zIndex: 1 }}
+    >
+      <img
+        className="welcome-page__img"
+        src={me}
+        alt="Yuliia Panchenko"
+        loading="lazy"
+        height="auto"
+        width="100%"
+      />
+    </motion.div>
+  );
 
   return (
     <motion.section
@@ -20,46 +43,10 @@ function WelcomePage() {
       animate="visible"
       exit="exit"
     >
-      <ul className="welcome-page__photos">
-        <motion.li
-          className="welcome-page__photo welcome-page__photo--top"
-          variants={moveXAnimation}
-          animate="visible"
-          initial="hidden"
-          custom={-300}
-          transition={{ duration: 0.8 }}
-          whileTap={{ scale: 0.95 }}
-          whileHover={{ scale: 1.05, zIndex: 1 }}
-        >
-          <img
-            className="welcome-page__img welcome-page__img--top"
-            src={me1}
-            alt="Yuliia Panchenko"
-            loading="lazy"
-            height="auto"
-            width="101%"
-          />
-        </motion.li>
-        <motion.li
-          className="welcome-page__photo welcome-page__photo--bottom"
-          variants={moveXAnimation}
-          animate="visible"
-          initial="hidden"
-          custom={-260}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          whileTap={{ scale: 0.95 }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <img
-            className="welcome-page__img welcome-page__img--bottom"
-            src={me}
-            alt="Yuliia Panchenko"
-            loading="lazy"
-            height="auto"
-            width="315%"
-          />
-        </motion.li>
-      </ul>
+      {screenWidth > 768 ?
+        <div className="welcome-page__container welcome-page__container--left">
+          {myPhoto}
+        </div> : null}
       <div className="welcome-page__container">
         <motion.h1
           className="welcome-page__title"
@@ -83,7 +70,7 @@ function WelcomePage() {
           custom={100}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          that loves to code and build products<br />
+          that loves to code and build products{' '}
           with a delightful user experience.
         </motion.p>
         <motion.figure
@@ -107,6 +94,7 @@ function WelcomePage() {
             <cite>Kent Beck</cite>
           </figcaption>
         </motion.figure>
+        {screenWidth <= 768 ? myPhoto : null}
         <CustomButton
           type="button"
           text="Learn more"

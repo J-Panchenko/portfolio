@@ -2,7 +2,7 @@
 @import 'assets/styles/mixin';
 
 .welcome-page {
-  @include flexRowWrap(0, center, space-between);
+  @include flexRowNoWrap(0, center, space-between);
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
@@ -10,6 +10,13 @@
   @include scroll;
   background-image: -webkit-linear-gradient(-24deg, transparent 44.5%, $primary 44.5%);
   position: relative;
+
+  @media screen and (max-width: 768px) {
+    @include flexColumnNoWrap(0, center, center);
+    height: 100%;
+    min-height: 100vh;
+    background-image: -webkit-linear-gradient(35deg, transparent 45%, $primary 50%);
+  }
 
   .block1 {
     content: '';
@@ -20,6 +27,23 @@
     bottom: 0;
     left: 38%;
     transform: matrix(1, 0, -0.445, 1, 0, 0);
+
+    @media screen and (max-width: 950px) {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      height: 30%;
+      display: block;
+      right: 1%;
+      left: auto;
+      bottom: 15%;
+      transform: matrix(1, 0, 0.73, 1, 0, 0);
+    }
+
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
   }
 
   .block2 {
@@ -30,6 +54,18 @@
     bottom: 0;
     left: 42%;
     transform: matrix(1, 0, -0.445, 1, 0, 0);
+
+    @media screen and (max-width: 768px) {
+      height: 30%;
+      right: 1%;
+      left: auto;
+      bottom: 30%;
+      transform: matrix(1, 0, 0.73, 1, 0, 0);
+    }
+
+    @media screen and (max-width: 520px) {
+      display: none;
+    }
   }
 
   .block3 {
@@ -40,6 +76,10 @@
     bottom: 0;
     left: 46%;
     transform: matrix(1, 0, -0.445, 1, 0, 0);
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   .bg-author {
@@ -47,46 +87,28 @@
     left: 0;
   }
 
-  &__photos {
-    padding: 120px;
-    position: relative;
-    height: 100%;
-    width: 50%;
-  }
-
   &__photo {
-    position: absolute;
     overflow: hidden;
-    border: 5px solid $block3;
+    border: 5px solid $secondary;
     border-radius: 4px;
 
-    &--top {
-      width: 370px;
-      height: 360px;
-      left: 180px;
-      top: 80px;
+    @media screen and (max-width: 768px) {
+      align-self: flex-start;
+      border-color: $block3;
     }
 
-    &--bottom {
-      width: 240px;
-      height: 360px;
-      bottom: 80px;
-      left: 80px;
-      border-color: $primary;
+    @media screen and (max-width: 520px) {
+      align-self: center;
     }
   }
 
   &__img {
     object-fit: cover;
+    width: 380px;
+    height: auto;
 
-    &--top {
-      margin: 0;
-      margin-top: -18%;
-    }
-
-    &--bottom {
-      margin-left: -85%;
-      margin-top: -79%;
+    @media screen and (max-width: 1024px) {
+      width: 340px;
     }
   }
 
@@ -132,6 +154,24 @@
     @include flexColumnNoWrap(16px, flex-end, flex-start);
     padding: 80px;
     gap: 16px;
+    z-index: 1;
+
+    @media screen and (max-width: 1200px) {
+      padding: 64px 32px;
+    }
+
+    @media screen and (max-width: 1024px) {
+      padding: 40px 32px;
+    }
+
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      gap: 32px;
+    }
+
+    &--left {
+      @include flexColumnNoWrap(16px, flex-start, flex-start);
+    }
   }
 
   &__title {
@@ -142,11 +182,37 @@
     &--highlighted {
       color: $white;
     }
+
+    @media screen and (max-width: 768px) {
+      @include fontSemibold(32px, 40px);
+      text-align: center;
+      align-self: center;
+    }
+
+    @media screen and (max-width: 520px) {
+      @include fontSemibold(30px, 38px);
+    }
   }
 
   &__subtitle {
     @include fontMedium(20px, 28px);
     text-align: right;
     color: $secondary;
+    max-width: 400px;
+
+    @media screen and (max-width: 768px) {
+      text-align: center;
+      align-self: center;
+    }
+
+    @media screen and (max-width: 520px) {
+      @include fontMedium(18px, 24px);
+    }
+  }
+
+  .button.xl.secondary {
+    @media screen and (max-width: 520px) {
+      align-self: center;
+    }
   }
 }
