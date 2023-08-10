@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction } from 'react';
+import { Dispatch, SetStateAction, useState } from 'react';
+import { hiddenPhotoMask, visiblePhotoMask } from 'assets/animation';
 import { motion } from 'framer-motion';
 import './RecentWorkItem.scss';
 
@@ -15,6 +16,7 @@ function RecentWorkItem({
   title,
   openDescription,
 }: RecentWorkItemProps) {
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
     <motion.li
@@ -29,11 +31,27 @@ function RecentWorkItem({
         className="recent-work-item__button"
         onClick={() => openDescription(id)}
       >
-        <img
+        <motion.div
           className="recent-work-item__cover"
-          src={cover}
-          alt={title}
-        />
+          initial={false}
+          animate={isLoaded ?
+            {
+              WebkitMaskImage: visiblePhotoMask('to top'),
+              maskImage: visiblePhotoMask('to top'),
+            } :
+            {
+              WebkitMaskImage: hiddenPhotoMask('to top'),
+              maskImage: hiddenPhotoMask('to top'),
+            }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <img
+            className="recent-work-item__cover"
+            src={cover}
+            alt={title}
+            onLoad={() => setIsLoaded(true)}
+          />
+        </motion.div>
         <p className="recent-work-item__title">
           {title}
         </p>
