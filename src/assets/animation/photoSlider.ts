@@ -1,9 +1,11 @@
 import { Variants } from 'framer-motion';
 
-export const hiddenPhotoMask = 'repeating-linear-gradient(to right, rgba(0,0,0,0) 0px,' +
-' rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)';
-export const visiblePhotoMask = 'repeating-linear-gradient(to right, rgba(0,0,0,0) 0px,' +
-' rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)';
+export const hiddenPhotoMask = (dir?: string) =>
+  `repeating-linear-gradient(${dir ?? 'to right'}, rgba(0,0,0,0) 0px,` +
+  ' rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)';
+export const visiblePhotoMask = (dir?: string) =>
+  `repeating-linear-gradient(${dir ?? 'to right'}, rgba(0,0,0,0) 0px,` +
+  ' rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)';
 
 export const photoSliderS: Variants = {
   enter: (direction: number) => {

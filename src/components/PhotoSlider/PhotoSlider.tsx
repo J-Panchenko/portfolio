@@ -29,8 +29,8 @@ function PhotoSlider({ photos, full }: PhotoSliderProps) {
           className="photo-slider__container"
           initial={false}
           animate={isLoaded ?
-            { WebkitMaskImage: visiblePhotoMask, maskImage: visiblePhotoMask } :
-            { WebkitMaskImage: hiddenPhotoMask, maskImage: hiddenPhotoMask }}
+            { WebkitMaskImage: visiblePhotoMask(), maskImage: visiblePhotoMask() } :
+            { WebkitMaskImage: hiddenPhotoMask(), maskImage: hiddenPhotoMask() }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           <motion.img

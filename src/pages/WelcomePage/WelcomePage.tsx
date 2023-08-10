@@ -1,17 +1,21 @@
 
 import { BgAuthor, CustomButton } from 'components';
-import { moveXAnimation, switchingPages } from 'assets/animation';
+import {
+  hiddenPhotoMask, moveXAnimation, switchingPages, visiblePhotoMask,
+} from 'assets/animation';
 import { FaArrowRight } from 'react-icons/fa';
 import { externalLinks } from 'data';
 import me from 'assets/images/welcomePage/me.jpg';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useScreenDimensions } from 'hooks';
+import { useState } from 'react';
 import './WelcomePage.scss';
 
 function WelcomePage() {
   const navigate = useNavigate();
   const { screenWidth } = useScreenDimensions();
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   const myPhoto = (
     <motion.div
@@ -24,14 +28,23 @@ function WelcomePage() {
       whileTap={{ scale: 0.95 }}
       whileHover={{ scale: 1.05, zIndex: 1 }}
     >
-      <img
-        className="welcome-page__img"
-        src={me}
-        alt="Yuliia Panchenko"
-        loading="lazy"
-        height="auto"
-        width="100%"
-      />
+      <motion.div
+        initial={false}
+        animate={isLoaded ?
+          { WebkitMaskImage: visiblePhotoMask('to left'), maskImage: visiblePhotoMask('to left') } :
+          { WebkitMaskImage: hiddenPhotoMask('to left'), maskImage: hiddenPhotoMask('to left') }}
+        transition={{ duration: 0.7, delay: 0.3 }}
+      >
+        <img
+          className="welcome-page__img"
+          src={me}
+          alt="Yuliia Panchenko"
+          loading="lazy"
+          height="auto"
+          width="100%"
+          onLoad={() => setIsLoaded(true)}
+        />
+      </motion.div>
     </motion.div>
   );
 
