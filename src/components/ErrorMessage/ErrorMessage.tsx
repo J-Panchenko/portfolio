@@ -1,4 +1,4 @@
-import { ReactComponent as Warning } from 'assets/images/icons/alertCircle.svg';
+import { FiAlertCircle } from 'react-icons/fi';
 import { error } from 'data';
 import { motion } from 'framer-motion';
 import './ErrorMessage.scss';
@@ -16,7 +16,7 @@ function ErrorMessage({ message = error.unknown }: ErrorMessageProps) {
       exit={{ opacity: 0 }}
       transition={{ ease: 'easeInOut', duration: 0.2, delay: 0.5 }}
     >
-      <Warning />
+      <FiAlertCircle className="error-message__icon"/>
       <span className="error-message__text">
         {message ? message : error.unknown}
       </span>
