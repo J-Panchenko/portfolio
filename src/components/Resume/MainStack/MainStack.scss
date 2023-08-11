@@ -1,0 +1,24 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.main-stack {
+  @include flexRowWrap(0, flex-start);
+  row-gap: 16px;
+  column-gap: 40px;
+  width: 100%;
+
+  @media screen and (max-width: 1120px) {
+    justify-content: flex-start;
+  }
+
+  &__list {
+    @include flexColumnNoWrap(16px, flex-start, flex-start);
+    @include fontRegular(16px, 24px);
+    color: $grey;
+
+    &-item {
+      @include flexRowNoWrap(8px, flex-start, flex-start);
+      width: 100%;
+    }
+  }
+}

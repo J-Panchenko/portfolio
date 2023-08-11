@@ -1,0 +1,79 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.experience {
+  width: 100%;
+
+  &__container {
+    width: 100%;
+    overflow-y: auto;
+    @include scroll;
+  }
+
+  &__table {
+    width: 100%;
+    table-layout: auto;
+    border-collapse: separate;
+
+    &-body {
+
+      &-row {
+        width: 100%;
+      }
+
+      &-cell {
+        padding: 16px 8px;
+
+        &.about {
+          width: 23%;
+          min-width: 160px;
+
+          .my-position {
+            @include fontMedium(18px, 24px);
+            color: $secondary;
+            margin-bottom: 4px;
+          }
+
+          .my-period {
+            @include fontRegular(14px, 18px);
+            color: $grey;
+            font-style: italic;
+          }
+        }
+
+        &.company {
+          width: 30%;
+          min-width: 220px;
+
+          .company-name {
+            @include fontMedium(18px, 24px);
+            color: $secondary;
+            margin-bottom: 4px;
+          }
+
+          .company-description {
+            @include fontRegular(14px, 18px);
+            color: $grey;
+            font-style: italic;
+          }
+        }
+
+        &.duties {
+          width: auto;
+          min-width: 280px;
+        }
+      }
+    }
+  }
+
+  &__list {
+    list-style: circle;
+    @include flexColumnNoWrap(4px, flex-start, flex-start);
+    margin-left: 16px;
+
+    &-item {
+      @include fontRegular(16px, 22px);
+      color: $grey;
+    }
+  }
+}

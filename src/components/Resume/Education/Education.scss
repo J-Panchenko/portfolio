@@ -1,0 +1,26 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.education {
+  width: 100%;
+
+  &__list {
+    @include flexColumnNoWrap(24px, flex-start, flex-start);
+    width: 100%;
+  }
+
+  &__item {
+    @include flexColumnNoWrap(8px, flex-start, flex-start);
+    width: 100%;
+
+    &-description {
+      @include fontRegular(16px, 22px);
+      color: $grey;
+    }
+
+    &-title {
+      @include fontSemibold(18px, 24px);
+      color: $secondary;
+    }
+  }
+}

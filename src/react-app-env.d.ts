@@ -39,6 +39,29 @@ declare global {
     name: string;
     isFavorite: boolean;
   }
+
+  interface StackItem {
+    id: number;
+    title: string;
+    grade: 1 | 2 | 3 | 4 | 5;
+  }
+
+  interface ExperienceItem {
+    id: number;
+    company: string;
+    position: string;
+    period: string;
+    duties: string[];
+    description: string;
+  }
+
+  interface CourseItem {
+    id: number;
+    title: string;
+    description: string;
+    hasCertificate: boolean;
+    link?: string;
+  }
 }
 
 export { };

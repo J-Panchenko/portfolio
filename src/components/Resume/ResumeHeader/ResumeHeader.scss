@@ -1,0 +1,98 @@
+@import 'assets/styles/variables';
+@import 'assets/styles/mixin';
+
+.resume-header {
+  @include flexRowNoWrap(24px, flex-start);
+  flex-direction: row-reverse;
+  width: 100%;
+  padding: 40px;
+
+  @media screen and (max-width: 1120px) {
+    @include flexRowWrap(24px, flex-start);
+    flex-direction: row;
+    padding: 24px;
+  }
+
+
+  @media screen and (max-width: 520px) {
+    padding: 24px 0;
+  }
+
+  &__photo {
+    position: absolute;
+
+    &-container {
+      position: relative;
+      min-width: 240px;
+      width: 240px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+
+  &__info {
+    @include flexColumnNoWrap(8px, center, flex-start);
+    width: 100%;
+
+    @media screen and (max-width: 1120px) {
+      @include flexColumnNoWrap(8px, center, center);
+    }
+
+    &-name {
+      @include fontSemibold(36px, 44px);
+      color: $secondary;
+      text-align: center;
+    }
+
+    &-position {
+      @include fontMedium(28px, 36px);
+      color: $grey;
+      text-align: center;
+    }
+
+    &-contacts {
+      @include flexRowNoWrap(32px, flex-start);
+      flex-direction: row-reverse;
+      padding-top: 40px;
+      width: 100%;
+
+
+      @media screen and (max-width: 1120px) {
+        // @include flexRowWrap(16px, flex-start, flex-start);
+        padding-top: 12px;
+      }
+
+      @media screen and (max-width: 768px) {
+        @include flexRowWrap(16px, flex-start, flex-start);
+        padding-top: 12px;
+      }
+
+      &-list {
+        @include flexColumnNoWrap(16px, flex-start);
+      }
+
+      &-item {
+        @include flexRowNoWrap(8px);
+        color: $grey;
+        @include fontMedium(16px, 24px);
+
+        .contact-icon {
+          width: inherit;
+          height: inherit;
+          color: $secondary;
+
+          &__container {
+            width: 24px;
+            height: 24px;
+
+            @media screen and (max-width: 520px) {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,12 @@
 import { aboutMe, aboutMeMain } from './aboutMe';
+import {
+  briefInfo,
+  courses,
+  experience,
+  mainStackLeftSide,
+  mainStackRightSide,
+  resumeContacts,
+} from './resume';
 import { contacts, menuList } from './initialData';
 import { recentWork, recentWorkInitial } from './recentWork';
 import { error } from './userMessage';
@@ -17,4 +25,10 @@ export {
   recentWork,
   recentWorkInitial,
   error,
+  resumeContacts,
+  briefInfo,
+  courses,
+  experience,
+  mainStackLeftSide,
+  mainStackRightSide,
 };

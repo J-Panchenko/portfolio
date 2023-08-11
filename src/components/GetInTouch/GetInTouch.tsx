@@ -11,7 +11,7 @@ import {
 import { contacts, schemaForm } from 'data';
 import { CustomButton } from 'components/Buttons';
 import { Tooltip } from '@chakra-ui/react';
-import { ReactComponent as Ukraine } from 'assets/images/icons/ukraine.svg';
+import { icons } from 'assets/images/icons';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import './GetInTouch.scss';
@@ -76,7 +76,7 @@ function GetInTouch() {
                 <p className="contact-info__main-location-text">
                   Ukraine, Kyiv
                 </p>
-                <Ukraine className="contact-info__main-location-flag" />
+                <icons.FlagUA className="contact-info__main-location-flag" />
               </li>
             </ul>
           </div>
