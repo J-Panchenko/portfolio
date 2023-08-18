@@ -4,6 +4,7 @@ import {
   hiddenPhotoMask, moveXAnimation, switchingPages, visiblePhotoMask,
 } from 'assets/animation';
 import { FaArrowRight } from 'react-icons/fa';
+import { Helmet } from 'react-helmet';
 import { externalLinks } from 'data';
 import me from 'assets/images/me.jpg';
 import { motion } from 'framer-motion';
@@ -61,6 +62,14 @@ function WelcomePage() {
           {myPhoto}
         </div> : null}
       <div className="welcome-page__container">
+        <Helmet>
+          <title>Welcome to Yuliia Panchenko portfolio</title>
+          <meta
+            name="description"
+            content={'Welcome to Yuliia Panchenko portfolio.' +
+              ' Here you can find information about me, my skills, experience and education.'}
+          />
+        </Helmet>
         <motion.h1
           className="welcome-page__title"
           variants={moveXAnimation}

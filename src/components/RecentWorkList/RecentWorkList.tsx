@@ -1,5 +1,6 @@
 import { recentWork, recentWorkInitial } from 'data';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import { RecentWorkFullInfo } from 'components/Modals';
 import RecentWorkItem from './RecentWorkItem';
 import './RecentWorkList.scss';
@@ -20,6 +21,13 @@ function RecentWorkList() {
 
   return (
     <section className="recent-work">
+      <Helmet>
+        <title>Recent works of Yuliia Panchenko</title>
+        <meta
+          name="description"
+          content="I've built web applications using React, TypeScript, Redux and other tools."
+        />
+      </Helmet>
       <h1 className="recent-work__title">
         What did I work on?
       </h1>

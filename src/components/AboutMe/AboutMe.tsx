@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from 'react';
 import { GiSpeedometer, GiStopwatch, GiTechnoHeart } from 'react-icons/gi';
 import { aboutMe, aboutMeMain } from 'data';
+import { Helmet } from 'react-helmet';
 import './AboutMe.scss';
 
 interface AboutMeProps {
@@ -11,6 +12,13 @@ function AboutMe({ setActiveTab }: AboutMeProps) {
 
   return (
     <section className="about-me">
+      <Helmet>
+        <title>About Yuliia Panchenko</title>
+        <meta
+          name="description"
+          content="I'm a Frontend Engineer with 2 years of experience in building web applications."
+        />
+      </Helmet>
       <h1 className="about-me__title">
         Who am I?
       </h1>

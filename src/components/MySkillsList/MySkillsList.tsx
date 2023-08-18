@@ -1,4 +1,5 @@
 import { MainBaseSkills, MainImportantSkills, MainSecondarySkills, OtherSkills } from '.';
+import { Helmet } from 'react-helmet';
 import { skills } from 'data';
 import './MySkillsList.scss';
 
@@ -7,6 +8,13 @@ function MySkillsList() {
 
   return (
     <section className="my-skills">
+      <Helmet>
+        <title>What does Yuliia Panchenko use?</title>
+        <meta
+          name="description"
+          content="I use React, TypeScript, Redux and other tools to build web applications."
+        />
+      </Helmet>
       <h1 className="my-skills__title">
         What do I use?
       </h1>

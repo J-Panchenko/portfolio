@@ -161,7 +161,7 @@ export const courses: CourseItem[] = [
       ' I also learned how to used React Design Patterns' +
       ' and converted app to Progressive Web App.',
     hasCertificate: true,
-    link: '', // TODO: add link when course will be finished
+    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1692340895/eu4ua/React23_edkxgv.jpg',
   },
   {
     id: 2,
@@ -197,7 +197,7 @@ export const courses: CourseItem[] = [
       ' to create modern front-end applications with React and Redux. I also used' +
       ' the REST API to access data on the server and used React Hooks.',
     hasCertificate: true,
-    link: '', // TODO: add link when certificate will be on English
+    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1692340895/eu4ua/ReactRedux_ry3rzt.jpg',
   },
   {
     id: 6,

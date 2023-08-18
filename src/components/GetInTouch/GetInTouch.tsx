@@ -10,6 +10,7 @@ import {
 } from 'react-icons/si';
 import { contacts, schemaForm } from 'data';
 import { CustomButton } from 'components/Buttons';
+import { Helmet } from 'react-helmet';
 import { Tooltip } from '@chakra-ui/react';
 import { icons } from 'assets/images/icons';
 import { useForm } from 'react-hook-form';
@@ -48,6 +49,13 @@ function GetInTouch() {
 
   return (
     <section className="get-in-touch">
+      <Helmet>
+        <title>Get in touch with Yuliia Panchenko</title>
+        <meta
+          name="description"
+          content="I am open to cooperation and work proposals. Feel free to contact me."
+        />
+      </Helmet>
       <h1 className="get-in-touch__title">
         Get in touch
       </h1>

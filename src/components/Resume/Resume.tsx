@@ -1,5 +1,6 @@
 
 import { Courses, Education, Experience, MainStack, ResumeHeader } from '.';
+import { Helmet } from 'react-helmet';
 import { briefInfo } from 'data';
 import './Resume.scss';
 
@@ -7,6 +8,13 @@ function Resume() {
 
   return (
     <section className="resume">
+      <Helmet>
+        <title>Yuliia Panchenko - CV</title>
+        <meta
+          name="description"
+          content="My resume with information about my skills, experience and education."
+        />
+      </Helmet>
       <h1 className="resume__title">
         My Resume
       </h1>
