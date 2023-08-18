@@ -23,7 +23,6 @@ function Resume() {
         <a
           className="resume__link"
           href={externalLinks.cv}
-          download="Yuliia_Panchenko_Frontend_Developer"
           target="_blank"
           rel="noreferrer"
         >
