@@ -1,7 +1,8 @@
 
 import { Courses, Education, Experience, MainStack, ResumeHeader } from '.';
+import { briefInfo, externalLinks } from 'data';
+import { CustomButton } from 'components/Buttons';
 import { Helmet } from 'react-helmet';
-import { briefInfo } from 'data';
 import './Resume.scss';
 
 function Resume() {
@@ -15,9 +16,23 @@ function Resume() {
           content="My resume with information about my skills, experience and education."
         />
       </Helmet>
-      <h1 className="resume__title">
-        My Resume
-      </h1>
+      <div className="resume__header">
+        <h1 className="resume__title">
+          My Resume
+        </h1>
+        <a
+          className="resume__link"
+          href={externalLinks.cv}
+          download="Yuliia_Panchenko_Frontend_Developer"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <CustomButton
+            text="Open CV in PDF format"
+            className="resume__button"
+          />
+        </a>
+      </div>
       <div className="resume__container">
         <ResumeHeader />
         <div className="resume__block">
@@ -112,7 +127,7 @@ function Resume() {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
 
