@@ -57,10 +57,10 @@ function WelcomePage() {
       animate="visible"
       exit="exit"
     >
-      {screenWidth > 768 ?
+      {screenWidth > 768 &&
         <div className="welcome-page__container welcome-page__container--left">
           {myPhoto}
-        </div> : null}
+        </div>}
       <div className="welcome-page__container">
         <Helmet>
           <title>Welcome to Yuliia Panchenko portfolio</title>
@@ -116,7 +116,7 @@ function WelcomePage() {
             <cite>Kent Beck</cite>
           </figcaption>
         </motion.figure>
-        {screenWidth <= 768 ? myPhoto : null}
+        {screenWidth <= 768 && myPhoto}
         <CustomButton
           type="button"
           text="Learn more"
