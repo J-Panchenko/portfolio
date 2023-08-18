@@ -109,9 +109,9 @@ export const experience: ExperienceItem[] = [
     description: 'is a French nonprofit association that' +
       ' helps Ukrainian refugees to suttle down in Europe.',
     duties: [
-      'Developed the frontend part of the project.',
-      'Cteated a base structure of the project.',
-      'Added an EsLint configuration to the client side.',
+      'Developed the front-end part of the project.',
+      'Created a base structure of the project.',
+      'Added an ESLint configuration to the client side.',
       'Implemented a responsive design using Tailwind CSS.',
       'Implemented a multi-language support using Reacti18next.',
       'Developed a custom form validation using React Hook Form and Zod.',
@@ -127,11 +127,11 @@ export const experience: ExperienceItem[] = [
     description: 'is a web tech company' +
       ' that developing SaaS products for business clients across the US.',
     duties: [
-      'Developed the frontend part of the project.',
+      'Developed the front-end part of the project.',
       'Implemented a responsive design using media queries.',
       'Developed a custom form validation using React Hook Form and Yup.',
       'Created a base template of the project for the team.',
-      'Added an EsLint configuration and provided TypeScript support to the client side.',
+      'Added an ESLint configuration and provided TypeScript support to the client side.',
       'Performed various administrative duties such as planning,' +
       ' task distribution, estimating projects.',
       'Worked well independently and on a team to solve problems.',

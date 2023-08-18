@@ -16,7 +16,7 @@ export const recentWork: WorkItem[] = [
     cover: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1685533378/Screenshot_2023-05-31_at_14.41.54_gjtzgs.png',
     myDuties: 'I was responsible for the front-end part of the project.' +
       ' I developed up to 70% of the website UI and implemented the website logic,' +
-      ' added eslint setup and updated structure of client side,' +
+      ' added ESlint setup and updated structure of client side,' +
       ' add validation for forms using Zod,' +
       ' connected the front-end to the back-end.',
     website: 'https://www.eu4ua.org/',
