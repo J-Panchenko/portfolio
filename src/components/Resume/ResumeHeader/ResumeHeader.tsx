@@ -2,7 +2,7 @@ import { IoCall, IoLocation, IoMail } from 'react-icons/io5';
 import { SiGithub, SiLinkedin, SiTelegram } from 'react-icons/si';
 import { hiddenPhotoMask, visiblePhotoMask } from 'assets/animation';
 import { ReactComponent as Ukraine } from 'assets/images/icons/ukraine.svg';
-import me from 'assets/images/resume.jpg';
+import me from 'assets/images/resume.webp';
 import { motion } from 'framer-motion';
 import { resumeContacts } from 'data';
 import { useState } from 'react';
@@ -26,6 +26,7 @@ function ResumeHeader() {
           src={me}
           alt="Yuliia Panchenko"
           onLoad={() => setIsLoaded(true)}
+          loading="lazy"
         />
       </motion.div>
       <div className="resume-header__info">

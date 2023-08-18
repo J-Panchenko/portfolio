@@ -6,7 +6,7 @@ import {
 import { FaArrowRight } from 'react-icons/fa';
 import { Helmet } from 'react-helmet';
 import { externalLinks } from 'data';
-import me from 'assets/images/me.jpg';
+import me from 'assets/images/me.webp';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useScreenDimensions } from 'hooks';

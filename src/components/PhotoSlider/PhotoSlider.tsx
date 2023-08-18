@@ -57,8 +57,8 @@ function PhotoSlider({ photos, full }: PhotoSliderProps) {
         </motion.div>
         <ul className="photo-slider__dots">
           {photos.map((_: string, i: number) => imageIndex === i ?
-            <li key={i} className="photo-slider__dot h-2 w-2 rounded-full bg-white" /> :
-            <li key={i} className="photo-slider__dot photo-slider__dot--transparent" />)}
+            <li key={i} className="photo-slider__dot" /> :
+            <li key={i} className="photo-slider__dot" />)}
         </ul>
       </AnimatePresence>
       <button

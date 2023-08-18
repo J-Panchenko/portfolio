@@ -50,6 +50,7 @@ function RecentWorkItem({
             src={cover}
             alt={title}
             onLoad={() => setIsLoaded(true)}
+            loading="lazy"
           />
         </motion.div>
         <p className="recent-work-item__title">
