@@ -1,6 +1,6 @@
 import { SkillItem, SkillItemProps } from '..';
 import { GiPoliceOfficerHead } from 'react-icons/gi';
-import Tooltip from 'components/Tooltip';
+import { Tooltip } from 'components';
 import { useState } from 'react';
 import './MainBaseSkills.scss';
 

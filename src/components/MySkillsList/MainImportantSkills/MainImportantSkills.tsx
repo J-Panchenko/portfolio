@@ -1,6 +1,6 @@
 import { SkillItem, SkillItemProps } from '..';
 import { GiMuscularTorso } from 'react-icons/gi';
-import Tooltip from 'components/Tooltip';
+import { Tooltip } from 'components';
 import { useState } from 'react';
 import './MainImportantSkills.scss';
 

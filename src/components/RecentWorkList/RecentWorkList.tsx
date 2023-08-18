@@ -1,8 +1,7 @@
+import { RecentWorkItem, RecentWorkModal } from '.';
 import { recentWork, recentWorkInitial } from 'data';
 import { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { RecentWorkFullInfo } from 'components/Modals';
-import RecentWorkItem from './RecentWorkItem';
 import './RecentWorkList.scss';
 
 function RecentWorkList() {
@@ -42,7 +41,7 @@ function RecentWorkList() {
           />
         ))}
       </ul>
-      <RecentWorkFullInfo
+      <RecentWorkModal
         isOpen={!!selectedWork}
         onClose={() => setOpenDescription('')}
         selectedWork={selectedWork || recentWorkInitial}

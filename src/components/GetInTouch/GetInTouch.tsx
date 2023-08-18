@@ -1,5 +1,5 @@
 import * as z from 'zod';
-import { FormInput, FormTextarea } from 'components/Inputs';
+import { CustomButton, FormInput, FormTextarea } from 'components';
 import { IoLocation, IoMail } from 'react-icons/io5';
 import {
   SiGithub,
@@ -9,7 +9,6 @@ import {
   SiTelegram,
 } from 'react-icons/si';
 import { contacts, schemaForm } from 'data';
-import { CustomButton } from 'components/Buttons';
 import { Helmet } from 'react-helmet';
 import { Tooltip } from '@chakra-ui/react';
 import { icons } from 'assets/images/icons';

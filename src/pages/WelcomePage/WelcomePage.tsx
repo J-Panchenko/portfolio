@@ -32,8 +32,13 @@ function WelcomePage() {
       <motion.div
         initial={false}
         animate={isLoaded ?
-          { WebkitMaskImage: visiblePhotoMask('to left'), maskImage: visiblePhotoMask('to left') } :
-          { WebkitMaskImage: hiddenPhotoMask('to left'), maskImage: hiddenPhotoMask('to left') }}
+          {
+            WebkitMaskImage: visiblePhotoMask('to left'),
+            maskImage: visiblePhotoMask('to left'),
+          } : {
+            WebkitMaskImage: hiddenPhotoMask('to left'),
+            maskImage: hiddenPhotoMask('to left'),
+          }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
         <img

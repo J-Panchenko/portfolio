@@ -4,7 +4,7 @@ import {
   TextareaHTMLAttributes,
 } from 'react';
 import { FieldValues, UseFormRegister } from 'react-hook-form';
-import ErrorMessage from 'components/ErrorMessage';
+import { ErrorMessage } from 'components';
 import { motion } from 'framer-motion';
 import './FormTextarea.scss';
 

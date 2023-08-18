@@ -1,6 +1,6 @@
 import { GiBackForth, GiConqueror, GiFlowerPot, GiLegArmor } from 'react-icons/gi';
 import { SkillItem, SkillItemProps } from '..';
-import Tooltip from 'components/Tooltip';
+import { Tooltip } from 'components';
 import { useState } from 'react';
 import './MainSecondarySkills.scss';
 

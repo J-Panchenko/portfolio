@@ -42,6 +42,7 @@ function PhotoSlider({ photos, full }: PhotoSliderProps) {
             initial="enter"
             animate="center"
             exit="exit"
+            loading="lazy"
             transition={{ x: { type: 'spring', stiffness: 550, damping: 40 } }}
             drag="x"
             onLoad={() => setIsLoaded(true)}

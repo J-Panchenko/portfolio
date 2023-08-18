@@ -1,25 +1,26 @@
-import { Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from '@chakra-ui/react';
-import { CustomButton } from 'components/Buttons';
-import PhotoSlider from 'components/PhotoSlider';
+import { CustomButton, PhotoSlider } from 'components';
+import {
+  Modal, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay,
+} from '@chakra-ui/react';
 import { useScreenDimensions } from 'hooks';
-import './RecentWorkFullInfo.scss';
+import './RecentWorkModal.scss';
 
-interface RecentWorkFullInfoProps {
+interface RecentWorkModalProps {
   isOpen: boolean;
   onClose: () => void;
   selectedWork: WorkItem;
 }
 
-function RecentWorkFullInfo({
+function RecentWorkModal({
   isOpen,
   onClose,
   selectedWork,
-}: RecentWorkFullInfoProps) {
+}: RecentWorkModalProps) {
   const { screenWidth } = useScreenDimensions();
 
   return (
     <Modal
-      id="recent-work-full-info"
+      id="recent-work-modal"
       isOpen={isOpen}
       onClose={onClose}
       onEsc={onClose}
@@ -30,27 +31,27 @@ function RecentWorkFullInfo({
       <ModalOverlay />
       <ModalContent background="whitesmoke" width="fit-content">
         <ModalHeader>
-          <h3 className="recent-work-full-info__title">
+          <h3 className="recent-work-modal__title">
             {selectedWork.title}
           </h3>
-          <p className="recent-work-full-info__subtitle">
+          <p className="recent-work-modal__subtitle">
             {selectedWork.subtitle}
           </p>
         </ModalHeader>
         <ModalCloseButton />
-        <div className="recent-work-full-info__container">
+        <div className="recent-work-modal__container">
           <PhotoSlider photos={selectedWork.images} full />
-          <div className="recent-work-full-info__info">
-            <ul className="recent-work-full-info__info-tags">
+          <div className="recent-work-modal__info">
+            <ul className="recent-work-modal__info-tags">
               {selectedWork.tags.map((tag: string) => (
-                <li key={tag} className="recent-work-full-info__info-tag">
+                <li key={tag} className="recent-work-modal__info-tag">
                   {tag}
                 </li>))}
             </ul>
-            <p className="recent-work-full-info__info-duties">
+            <p className="recent-work-modal__info-duties">
               {selectedWork.myDuties}
             </p>
-            <div className="recent-work-full-info__info-links">
+            <div className="recent-work-modal__info-links">
               {selectedWork.aboutLink && (
                 <CustomButton
                   variant="ghost"
@@ -73,4 +74,4 @@ function RecentWorkFullInfo({
   );
 }
 
-export default RecentWorkFullInfo;
+export default RecentWorkModal;

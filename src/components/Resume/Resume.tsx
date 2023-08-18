@@ -1,7 +1,7 @@
 
 import { Courses, Education, Experience, MainStack, ResumeHeader } from '.';
 import { briefInfo, externalLinks } from 'data';
-import { CustomButton } from 'components/Buttons';
+import { CustomButton } from 'components';
 import { Helmet } from 'react-helmet';
 import './Resume.scss';
 

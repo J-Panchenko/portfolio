@@ -1,4 +1,6 @@
-import { AboutMe, BgAuthor, GetInTouch, Menu, MySkills, RecentWorkList, Resume } from 'components';
+import {
+  AboutMe, BgAuthor, GetInTouch, Menu, MySkills, RecentWorkList, Resume,
+} from 'components';
 import { AnimatePresence, motion } from 'framer-motion';
 import { switchingPages } from 'assets/animation';
 import { useState } from 'react';
