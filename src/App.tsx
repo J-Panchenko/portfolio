@@ -7,10 +7,6 @@ import './App.scss';
 function App() {
   const location = useLocation();
 
-  if (window.location.href === 'https://j-panchenko.github.io/') {
-    window.location.href = 'https://j-panchenko.github.io/portfolio/';
-  }
-
   return (
     <AnimatePresence initial={false} mode="wait">
       <Routes location={location} key={location.pathname}>
