@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.89543182.css",
-    "main.js": "/portfolio/static/js/main.f5d8a8f7.js",
+    "main.js": "/portfolio/static/js/main.e02c1684.js",
     "static/js/787.c4e7f8f9.chunk.js": "/portfolio/static/js/787.c4e7f8f9.chunk.js",
     "static/media/bg-welcome.webp": "/portfolio/static/media/bg-welcome.d2527c439ddfd02a54ab.webp",
     "static/media/poppins-devanagari-400-normal.woff": "/portfolio/static/media/poppins-devanagari-400-normal.0e11b62db931f85340d4.woff",
@@ -27,11 +27,11 @@
     "index.html": "/portfolio/index.html",
     "static/media/ukraine.svg": "/portfolio/static/media/ukraine.6109ae437a556808ca12bd96fc7531ce.svg",
     "main.89543182.css.map": "/portfolio/static/css/main.89543182.css.map",
-    "main.f5d8a8f7.js.map": "/portfolio/static/js/main.f5d8a8f7.js.map",
+    "main.e02c1684.js.map": "/portfolio/static/js/main.e02c1684.js.map",
     "787.c4e7f8f9.chunk.js.map": "/portfolio/static/js/787.c4e7f8f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89543182.css",
-    "static/js/main.f5d8a8f7.js"
+    "static/js/main.e02c1684.js"
   ]
 }
