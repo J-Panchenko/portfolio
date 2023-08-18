@@ -1,6 +1,9 @@
 @import 'assets/styles/variables';
 @import 'assets/styles/mixin';
 @import 'assets/styles/reset';
+@import "~@fontsource/poppins/index.css";
+@import "~@fontsource/poppins/500.css";
+@import "~@fontsource/poppins/600.css";
 
 #root {
   position: relative;
