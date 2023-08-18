@@ -74,13 +74,13 @@ function GetInTouch() {
             </p>
             <ul className="contact-info__main">
               <li className="contact-info__main-email">
-                <IoMail className="contact-info__main-location-icon" />
+                <IoMail className="contact-info__main-icon" />
                 <p className="contact-info__main-email-text">
                   panchenko.yuka@gmail.com
                 </p>
               </li>
               <li className="contact-info__main-location">
-                <IoLocation className="contact-info__main-location-icon" />
+                <IoLocation className="contact-info__main-icon" />
                 <p className="contact-info__main-location-text">
                   Ukraine, Kyiv
                 </p>
