@@ -12,7 +12,7 @@ const base: SkillItem[] = [
   {
     id: 'javascript',
     name: 'JavaScript',
-    isFavorite: false,
+    isFavorite: true,
   },
   {
     id: 'html5',
@@ -23,18 +23,28 @@ const base: SkillItem[] = [
 
 const mustHave: SkillItem[] = [
   {
+    id: 'redux',
+    name: 'Redux',
+    isFavorite: true,
+  },
+  {
+    id: 'rxjs',
+    name: 'RxJs',
+    isFavorite: true,
+  },
+  {
     id: 'zustand',
     name: 'Zustand',
     isFavorite: true,
   },
   {
-    id: 'redux-toolkit',
-    name: 'Redux Toolkit',
+    id: 'react-hook-form',
+    name: 'React Hook Form',
     isFavorite: true,
   },
   {
-    id: 'react-hook-form',
-    name: 'React Hook Form',
+    id: 'formik',
+    name: 'Formik',
     isFavorite: true,
   },
   {
@@ -197,6 +207,11 @@ const api: SkillItem[] = [
     isFavorite: false,
   },
   {
+    id: 'rest',
+    name: 'REST API',
+    isFavorite: true,
+  },
+  {
     id: 'stripe',
     name: 'Stripe API',
     isFavorite: false,
@@ -206,6 +221,11 @@ const api: SkillItem[] = [
     name: 'Spotify API',
     isFavorite: false,
   },
+  {
+    id: 'figma',
+    name: 'Figma API',
+    isFavorite: true,
+  }
 ];
 
 const libraries: SkillItem[] = [
@@ -251,6 +271,11 @@ const libraries: SkillItem[] = [
   {
     id: 'lodash',
     name: 'Lodash',
+    isFavorite: true,
+  },
+  {
+    id: 'lodash-fp',
+    name: 'Lodash/fp',
     isFavorite: true,
   },
   {
@@ -334,6 +359,16 @@ const libraries: SkillItem[] = [
   {
     id: 'react-toastify',
     name: 'React Toastify',
+    isFavorite: true,
+  },
+  {
+    id: 'react-select',
+    name: 'React Select',
+    isFavorite: false,
+  },
+  {
+    id: 'tinycolor2',
+    name: 'TinyColor2',
     isFavorite: true,
   },
   {

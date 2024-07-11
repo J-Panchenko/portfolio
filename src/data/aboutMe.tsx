@@ -1,9 +1,9 @@
 import { GiHornedHelm, GiLaptop, GiMayanPyramid, GiNotebook, GiShakingHands } from 'react-icons/gi';
 
 export const aboutMe = {
-  experience: 'I\'m a front-end engineer with 2 years of commercial web development experience.',
+  experience: 'I\'m a front-end engineer with 3 years of commercial web development experience.',
   stack: 'The main technical stack I\'ve experienced in most projects includes' +
-    ' React, JavaScript, TypeScript, Redux Toolkit, Zustand, Material Ui, Ant Design,' +
+    ' React, JavaScript, TypeScript, Redux, Zustand, RxJs, Material Ui, Ant Design,' +
     ' Tailwind CSS, SASS(SCSS), Framer Motion, ',
   partOfTeam: 'Able to effectively on independent projects,' +
     ' as well as collaborate as part of a productive team.',
@@ -24,7 +24,7 @@ export const aboutMe = {
     'give and receive feedback;',
     'listen to understand.',
   ],
-  hobbies: 'I like doing sports! I go to the gym four times a week.' +
+  hobbies: 'I like doing sports! I go to the gym six times a week.' +
     ' I even worked as a trainer. Sometimes I do yoga and stretching.' +
     ' It gives me balance and strength of mind.',
 };

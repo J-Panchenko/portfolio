@@ -48,9 +48,10 @@ function RecentWorkModal({
                   {tag}
                 </li>))}
             </ul>
-            <p className="recent-work-modal__info-duties">
-              {selectedWork.myDuties}
-            </p>
+            <p
+              className="recent-work-modal__info-duties"
+              dangerouslySetInnerHTML={{ __html: selectedWork.myDuties }}
+            />
             <div className="recent-work-modal__info-links">
               {selectedWork.aboutLink && (
                 <CustomButton

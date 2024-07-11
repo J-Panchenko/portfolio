@@ -102,10 +102,24 @@ export const mainStackRightSide: StackItem[] = [
 
 export const experience: ExperienceItem[] = [
   {
+    id: 0,
+    company: 'Weblium',
+    position: 'Frontend Developer',
+    period: 'December 2023 - Present',
+    description: 'is a website builder that helps people to create a website',
+    duties: [
+      'Improved existing functionality and added new features to the project.',
+      'Created element that can be working in the editor and on the published site.',
+      'Worked with RxJs for state management. Functional programming principles.',
+      'Implemented custom hooks and HOK for reusing logic.',
+      'Worked according to the Kanban methodology, used Jira.',
+    ],
+  },
+  {
     id: 1,
     company: 'EU4UA.org',
     position: 'Frontend Engineer',
-    period: 'May 2023 - Present',
+    period: 'May 2023 - December 2023',
     description: 'is a French nonprofit association that' +
       ' helps Ukrainian refugees to suttle down in Europe.',
     duties: [
@@ -161,7 +175,7 @@ export const courses: CourseItem[] = [
       ' I also learned how to used React Design Patterns' +
       ' and converted app to Progressive Web App.',
     hasCertificate: true,
-    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1692340895/eu4ua/React23_edkxgv.jpg',
+    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1692340895/CV/React23_edkxgv.jpg',
   },
   {
     id: 2,
@@ -171,7 +185,7 @@ export const courses: CourseItem[] = [
       ' applications with React Testing Library and Jest.' +
       ' I also learned how to correct common errors returned by Testing Library.',
     hasCertificate: true,
-    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1691755218/eu4ua/testingCertificate_fwy7fo.jpg',
+    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1691755218/CV/testingCertificate_fwy7fo.jpg',
   },
   {
     id: 3,
@@ -197,7 +211,7 @@ export const courses: CourseItem[] = [
       ' to create modern front-end applications with React and Redux. I also used' +
       ' the REST API to access data on the server and used React Hooks.',
     hasCertificate: true,
-    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1692340895/eu4ua/ReactRedux_ry3rzt.jpg',
+    link: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1692340895/CV/ReactRedux_ry3rzt.jpg',
   },
   {
     id: 6,

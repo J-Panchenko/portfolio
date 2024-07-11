@@ -10,6 +10,36 @@ export const recentWorkInitial: WorkItem = {
 
 export const recentWork: WorkItem[] = [
   {
+    id: '0',
+    title: 'Weblium',
+    subtitle: 'Website builder that helps you create a website in minutes',
+    cover: 'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720721746/Weblium/Screenshot_2024-07-11_at_21.01.42_bola2n.png',
+    myDuties: 'I was responsible for the front-end part of the project.' +
+      'I was participating in the development features:<br />' +
+      '1. Creating a new version of language switcher element.<br />' +
+      '2. Realization of the import from Figma to the project.<br />' +
+      '3. Adding promo code functionality to e-commerce sites.<br />' +
+      '4. Improving the work of global blocks on the site.',
+    website: 'https://www.weblium.com/',
+    tags: [
+      'React', 'JavaScript', 'RxJs', 'Redux Thunk', 'Redux Observable', 'SSR',
+      'SASS', 'Styled Components', 'React-i18next', 'Lodash-fp', 'Formik', 'Jest',
+    ],
+    images: [
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720722960/Weblium/Screenshot_2024-07-11_at_21.35.45_mehx96.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720723136/Weblium/Screenshot_2024-07-11_at_21.38.44_zy9bbu.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720721746/Weblium/Screenshot_2024-07-11_at_21.09.53_oqhihi.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720721746/Weblium/Screenshot_2024-07-11_at_21.10.21_sxfloj.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720723569/Weblium/Screenshot_2024-07-11_at_21.45.45_iqpysj.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720721746/Weblium/Screenshot_2024-07-11_at_21.09.20_g7xdy0.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720721746/Weblium/Screenshot_2024-07-11_at_21.09.36_sx4pxd.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720721747/Weblium/Screenshot_2024-07-11_at_21.13.00_gyjojq.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720722748/Weblium/Screenshot_2024-07-11_at_21.23.21_vkrptv.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720722748/Weblium/Screenshot_2024-07-11_at_21.31.54_qnfcvl.png',
+      'https://res.cloudinary.com/dzc60mxjg/image/upload/v1720722748/Weblium/Screenshot_2024-07-11_at_21.27.36_jgmqvf.png',
+    ],
+  },
+  {
     id: '1',
     title: 'EU4UA',
     subtitle: 'Helps Ukrainians to settle down in Europe',
