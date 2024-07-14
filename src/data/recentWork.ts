@@ -106,7 +106,6 @@ export const recentWork: WorkItem[] = [
       ' implemented the logic of the step by step creation of the story,' +
       ' added the logic of the user payment (Stripe API).' +
       ' I also used the new store management library - Zustand.',
-    website: 'https://novelin.ai/',
     tags: [
       'React', 'JavaScript', 'TypeScript',
       'Zustand', 'SASS', 'Material UI', 'Axios', 'Stripe API',
@@ -131,7 +130,6 @@ export const recentWork: WorkItem[] = [
       ' added base structure of the client side, connected the front-end to the back-end,' +
       ' implemented the logic of the products rendering on the plate using Framer Motion' +
       ' and the logic of the user registration and authorization.',
-    website: 'https://fullveganbelly.com/',
     tags: [
       'React', 'JavaScript', 'TypeScript',
       'Redux Toolkit', 'SASS', 'Material UI', 'Axios',
