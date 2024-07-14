@@ -7,7 +7,7 @@ export const resumeContacts = {
   telegram: 't.me/yuka_panchy',
 };
 
-export const briefInfo = 'I\'m a Frontend Engineer with 2 years of' +
+export const briefInfo = 'I\'m a Frontend Engineer with 3 years of' +
   ' experience in building web applications. I\'m passionate about creating products with' +
   ' a delightful user experience. I have a good knowledge of HTML, CSS, JavaScript, TypeScript,' +
   ' React, Redux, Git, and other technologies. I am a responsible, hard-working,' +
@@ -21,33 +21,33 @@ export const mainStackLeftSide: StackItem[] = [
   },
   {
     id: 2,
-    title: 'JavaScript (ES6+)',
+    title: 'JavaScript (ES6+), TypeScript',
     grade: 5,
   },
   {
     id: 3,
-    title: 'TypeScript',
-    grade: 5,
-  },
-  {
-    id: 4,
     title: 'React + React Patterns',
     grade: 5,
   },
   {
-    id: 5,
-    title: 'Redux Toolkit, Zustand',
+    id: 4,
+    title: 'Redux Toolkit, Redux Observable, Zustand',
     grade: 4,
   },
   {
-    id: 6,
+    id: 5,
     title: 'Fetch API, Axios (REST API), Socket.io (WebSockets)',
     grade: 5,
   },
   {
-    id: 7,
-    title: 'BEM, SASS/SCSS, Tailwind CSS, Styled Components',
+    id: 6,
+    title: 'SASS/SCSS, Tailwind CSS, Styled Components',
     grade: 5,
+  },
+  {
+    id: 7,
+    title: 'RxJs, Lodash-fp',
+    grade: 4,
   },
   {
     id: 8,
@@ -64,12 +64,12 @@ export const mainStackRightSide: StackItem[] = [
   },
   {
     id: 2,
-    title: 'React Hook Form (validation - Yup, Zod)',
+    title: 'React Hook Form, Formik (validation - Yup, Zod)',
     grade: 4,
   },
   {
     id: 3,
-    title: 'React Testing Library, Jest',
+    title: 'Jest, React Testing Library',
     grade: 3,
   },
   {
@@ -106,12 +106,13 @@ export const experience: ExperienceItem[] = [
     company: 'Weblium',
     position: 'Frontend Developer',
     period: 'December 2023 - Present',
-    description: 'is a website builder that helps people to create a website',
+    description: 'is a website builder that helps people to' +
+      ' create their own websites and online stores.',
     duties: [
       'Improved existing functionality and added new features to the project.',
-      'Created element that can be working in the editor and on the published site.',
-      'Worked with RxJs for state management. Functional programming principles.',
-      'Implemented custom hooks and HOK for reusing logic.',
+      'Created elements that can be integrated in React app and SSR version of site.',
+      'Worked with RxJs and Lodash-fp, following the principles of functional programming.',
+      'Wrote custom hooks and HOCs to reuse logic.',
       'Worked according to the Kanban methodology, used Jira.',
     ],
   },
@@ -167,6 +168,13 @@ export const experience: ExperienceItem[] = [
 ];
 
 export const courses: CourseItem[] = [
+  {
+    id: 0,
+    title: '2024 | Next.js 14 & React - The Complete Guide at Udemy',
+    description: 'This course is all about Next.js and React. I learned how to' +
+      ' create a SSR React app with Next.js.',
+    hasCertificate: false,
+  },
   {
     id: 1,
     title: '2023 | Complete React Developer in 2023 at Udemy',
