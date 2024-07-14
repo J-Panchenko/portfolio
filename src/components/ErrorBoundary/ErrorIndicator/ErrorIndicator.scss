@@ -5,7 +5,7 @@
   @include flexColumnNoWrap;
   width: 100%;
   max-width: 445px;
-  height: fit-content;
+  height: 100vh;
   margin: 56px auto 24px;
 
   &__inner {
