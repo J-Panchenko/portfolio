@@ -81,11 +81,6 @@ const mustHave: SkillItem[] = [
 
 const ui: SkillItem[] = [
   {
-    id: 'bem',
-    name: 'BEM',
-    isFavorite: true,
-  },
-  {
     id: 'sass',
     name: 'SASS',
     isFavorite: true,

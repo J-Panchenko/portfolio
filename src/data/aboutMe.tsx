@@ -1,7 +1,7 @@
 import { GiHornedHelm, GiLaptop, GiMayanPyramid, GiNotebook, GiShakingHands } from 'react-icons/gi';
 
 export const aboutMe = {
-  experience: 'I\'m a front-end engineer with 3 years of commercial web development experience.',
+  experience: 'I\'m a front-end engineer with 4 years of commercial web development experience.',
   stack: 'The main technical stack I\'ve experienced in most projects includes' +
     ' React, JavaScript, TypeScript, Redux, Zustand, RxJs, Material Ui, Ant Design,' +
     ' Tailwind CSS, SASS(SCSS), Framer Motion, ',

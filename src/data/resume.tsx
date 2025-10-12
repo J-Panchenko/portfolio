@@ -7,7 +7,7 @@ export const resumeContacts = {
   telegram: 't.me/yuka_panchy',
 };
 
-export const briefInfo = 'I\'m a Frontend Engineer with 3 years of' +
+export const briefInfo = 'I\'m a Frontend Engineer with 4 years of' +
   ' experience in building web applications. I\'m passionate about creating products with' +
   ' a delightful user experience. I have a good knowledge of HTML, CSS, JavaScript, TypeScript,' +
   ' React, Redux, Git, and other technologies. I am a responsible, hard-working,' +

@@ -16,7 +16,7 @@ function AboutMe({ setActiveTab }: AboutMeProps) {
         <title>About Yuliia Panchenko</title>
         <meta
           name="description"
-          content="I'm a Frontend Engineer with 2 years of experience in building web applications."
+          content="I'm a Frontend Engineer with 4 years of experience in building web applications."
         />
       </Helmet>
       <h1 className="about-me__title">
